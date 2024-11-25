@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sole Proprietorship Registration</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: #2c4ead;
+            padding: 1rem;
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .header-section {
+            background-color: #f8fafc;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 5px;
+        }
+
+        .header-section h1 {
+            color: #1e40af;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-section p {
+            color: #666;
+        }
+
+        .characteristics {
+            margin: 2rem 0;
+        }
+
+        .char-item {
+            background-color: #f8fafc;
+            color: rgb(10, 5, 5);
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+
+        .char-item:hover {
+            transform: translateX(10px);
+        }
+
+        .documents {
+            margin: 2rem 0;
+        }
+
+        .doc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .doc-item {
+            border: 1px solid #ccc;
+            padding: 1.5rem;
+            border-radius: 5px;
+            background-color: #f8fafc;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        .doc-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .work-flow {
+            display: flex;
+            justify-content: space-between;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .work-step {
+            text-align: center;
+            padding: 1.5rem;
+            flex: 1;
+            min-width: 220px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .work-step h3 {
+            margin-bottom: 1rem;
+            color: #003366;
+        }
+
+        .work-step:nth-child(1) { background-color: #e0f7fa; }
+        .work-step:nth-child(2) { background-color: #ffccbc; }
+        .work-step:nth-child(3) { background-color: #fff59d; }
+        .work-step:nth-child(4) { background-color: #c8e6c9; }
+
+        .faq-section {
+            margin: 2rem 0;
+        }
+
+        .faq-item {
+            margin: 1rem 0;
+            padding: 1.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.active {
+            background-color: #f5f5f5;
+            border-color: #1e40af;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: left;
+            color: #1e40af;
+            font-weight: 600;
+        }
+
+        .faq-answer {
+            margin-top: 1rem;
+            display: none;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: #1e40af;
+        }
+
+        h2 {
+            color: #1e40af;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #003366;
+        }
+
+        @media (max-width: 768px) {
+            .work-flow {
+                flex-direction: column;
+            }
+
+            .work-step {
+                margin: 0.5rem 0;
+            }
+
+            .doc-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-links">
+            <h3 href="#">B.Act Advisors</h3>
+            
+       
+        </div>
+    </nav>
+
+    <div class="content">
+        <div class="header-section">
+            <h1>Sole Proprietorship / Shop Act Registration</h1>
+            <p>Register your business under Shops and Establishments Act</p>
+        </div>
+
+        <div class="characteristics">
+            <h2>Characteristics of Sole Proprietorship Business</h2>
+            <div class="char-item">Proprietorship is the easiest form of business entity to start with</div>
+            <div class="char-item">Easy to Open a Bank Account in the name Owner</div>
+            <div class="char-item">A proprietor can choose any name as long as it does not infringe on a registered trademark</div>
+            <div class="char-item">Individual Income Tax Slab will be applicable</div>
+        </div>
+
+        <div class="documents">
+            <h2>Required Documents</h2>
+            <div class="doc-grid">
+                <div class="doc-item">PAN Card Copy of Proposed Sole Proprietor</div>
+                <div class="doc-item">Passport Size Photo of Proposed Sole Proprietor</div>
+                <div class="doc-item">Aadhar Card Copy of Proposed Sole Proprietor</div>
+                <div class="doc-item">Bank Statement / Telephone or Mobile or Electricity Bill</div>
+                <div class="doc-item">Rent Agreement Copy of Business Address</div>
+                <div class="doc-item">NOC from the Owner</div>
+            </div>
+        </div>
+
+        <div class="work-flow">
+            <div class="work-step">
+                <h3>Get Information First</h3>
+                <p>Discuss requirements with our consultant</p>
+            </div>
+            <div class="work-step">
+                <h3>Document Submit</h3>
+                <p>Provide all required documents</p>
+            </div>
+            <div class="work-step">
+                <h3>Pay Fee</h3>
+                <p>Complete payment online or offline</p>
+            </div>
+            <div class="work-step">
+                <h3>Reporting & Feedback</h3>
+                <p>Get registration certificate</p>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <div class="faq-question">
+                    What are the advantages of obtaining the Shop Act License?
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Easy to Start the Business - You can get Shop Act License in just 1-2 days' time. As a startup you can gain benefits such as Simple and less costly Business registration, Ease in raising funds for business, Tax Holiday, Easy access to Research and development facilities. Given the First priority when you apply for the Government tenders in India. Less Legal Compliances that you need to follow.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    When is a Shops and Establishments Act license required?
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Every shop and establishment needs to register itself mandatorily under the Telangana Shops and Establishment Act, 1988 within 30 days of commencement of work.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    What is the objective of the Shops and Establishments Act?
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    To secure uniform benefits for employees working in different establishments, from shops, commercial establishments and residential hotels to restaurants, theatres and other places of public amusement or entertainment.
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    How much time required for obtaining the Shop Act Registration Certificate?
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    Obtaining of Shop Act usually takes about 1-2 working days subject to the receipt of supporting documents from the client and the approval of the Govt. Authority.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                // Remove active class from all items
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                        otherItem.querySelector('.faq-toggle').textContent = '+';
+                    }
+                });
+                
+                // Toggle active class on clicked item
+                item.classList.toggle('active');
+                const toggle = item.querySelector('.faq-toggle');
+                toggle.textContent = item.classList.contains('active') ? '−' : '+';
+            });
+        });
+    </script>
+</body>
+</html>

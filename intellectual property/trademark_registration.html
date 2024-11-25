@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trademark Registration</title>
+    <style>
+        /* Add your CSS styles here */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: #1e40af;
+            padding: 1rem;
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        .nav-links h3 {
+            color: white;
+            text-decoration: none;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .header-section {
+            background-color: #f8fafc;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 5px;
+            border-bottom: 2px solid #003366;
+        }
+
+        .header-section h1 {
+            color: #1e40af;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-section p {
+            color: #666;
+        }
+
+        .characteristics {
+            margin: 2rem 0;
+            
+        }
+
+        .char-item {
+            background-color: #f8fafc;
+            color: rgb(10, 5, 5);
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+
+        .char-item:hover {
+            transform: translateX(10px);
+        }
+
+        .documents {
+            margin: 2rem 0;
+        }
+
+        .documents h2 {
+            color: #1e40af;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #003366;
+        }
+
+        .doc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .doc-item {
+            border: 1px solid #ccc;
+            padding: 1.5rem;
+            border-radius: 5px;
+            background-color: #f8fafc;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+            border-bottom: 2px solid #003366;
+        }
+
+        .doc-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .work-flow {
+            display: flex;
+            justify-content: space-between;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .work-step {
+            text-align: center;
+            padding: 1.5rem;
+            flex: 1;
+            min-width: 220px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .work-step h3 {
+            margin-bottom: 1rem;
+            color: #1e40af;
+        }
+
+        .work-step:nth-child(1) { background-color: #e0f7fa; }
+        .work-step:nth-child(2) { background-color: #ffccbc; }
+        .work-step:nth-child(3) { background-color: #fff59d; }
+        .work-step:nth-child(4) { background-color: #c8e6c9; }
+
+        .cost-section {
+            margin: 2rem 0;
+        }
+
+        .cost-section h2 {
+            color: #1e40af;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #003366;
+        }
+
+        .cost-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .cost-item {
+            border: 1px solid #ccc;
+            padding: 1.5rem;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .cost-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .price {
+            font-size: 1.4rem;
+            color: #1e40af;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .cost-item button {
+            padding: 0.7rem 1.5rem;
+            background-color: #1e40af;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .cost-item button:hover {
+            background-color: #1e40af;
+            
+        }
+
+        .faq-section {
+            margin: 2rem 0;
+        }
+
+        .faq-section h2 {
+            color: #1e40af;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #003366;
+            
+        }
+
+        .faq-item {
+            margin: 1rem 0;
+            padding: 1.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.active {
+            background-color: #f5f5f5;
+            border-color: #1e40af;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: left;
+            color: #1e40af;
+            font-weight: 600;
+        }
+
+        .faq-answer {
+            margin-top: 1rem;
+            display: none;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: #1e40af;
+        }
+        
+        /* Hover effect for Service Coverage list items */
+        .service-section .document-list li {
+            transition: transform 0.2s, background-color 0.2s;
+            padding: 1rem;
+            border-radius: 4px;
+        }
+
+        .service-section .document-list li:hover {
+            transform: translateX(5px);
+            background-color: #f8fafc; /* Light blue background on hover */
+            cursor: pointer;
+        }
+
+        /* Hover effect for Pre-requisite list items */
+        .prerequisite-section .document-list li {
+            transition: transform 0.2s, background-color 0.2s;
+            padding: 1rem;
+            border-radius: 4px;
+        }
+
+        .prerequisite-section .document-list li:hover {
+            transform: translateX(5px);
+            background-color: #f8fafc; /* Light blue background on hover */
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="navbar">
+                <div class="nav-links">
+                    <h3>B.Act Advisors</h3>
+                    <!-- Add more navigation links if needed -->
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="content">
+            <div class="header-section">
+                <h1>Incorporation of Private Limited Company in India(OPC)</h1>
+                <p>Private limited company is an independent legal entity with limited liability. Private limited company is a limited liability company formed with minimum two and maximum fifteen directors under Companies Act 2013 and it can have minimum two and maximum two hundred shareholders/members. In this form of company, directors have limited liability to shareholders, perpetual succession, easy to manage compliances, easy equity funding, and transferable ownership i.e. sale or purchase of company.
+
+                    A Private Limited Company is the most opted form of business entity for foreign investors in India. In this form of business entity foreign nationals and foreign companies can become directors and/ or shareholder and can bring foreign direct investment in compliance with RBI guidelines.
+                    
+                    Most ideal form of Company for Startups to start business and apply for funding from Investors. With Private Limited Company you can easily chase Bankers, financial Institutions and Private Equity Investors for expansion of your business. 
+                    
+                    Now a Private Limited Company can be incorporated with ZERO capital. Almost 90% of the companies incorporated in India are registered as private limited companies. LATERON, A private Limited Company can be easily converted into a Public Limited Company in case of expansion OR  can be converted into Limited Liability Partnership to reduce burden of ROC compliances.</p>
+            </div>
+
+            <div class="characteristics">
+                <h2 style="color: #1e40af;border-bottom: 2px solid #003366;background-color: #f8fafc;">Features of a Private Limited Company (PLC)</h2>
+                <div class="char-item">Minimum 2 Directors & Shareholders ( share subscribers) required.</div>
+                <div class="char-item">Maximum 15 Director and 200 Shareholders ( members) allowed in PLC</div>
+                <div class="char-item">All Directors Should obtain DIN ( Directors Identification Number)</div>
+                <div class="char-item">A Body corporate can be a shareholder in PLC.</div>
+                <div class="char-item">Annual ROC Filing Mandatory</div> 
+                <div class="char-item">Annual Statutory Audit compulsory by Practicing CA</div>
+                <div class="char-item">Income Tax rate @ 22% on net profit</div>
+                <div class="char-item">Eligible to apply for Startup Recognition subject to other T&C</div>
+                <div class="char-item">Most Ideal form of business to raise external funds from Investors</div>
+                <div class="char-item">Can offer ESOP to its employee</div>
+                <div class="char-item">Separate Legal Entity and Limited Liability</div>
+            </div>
+
+            <div class="documents">
+                <h2 style="color: #1e40af;">Documents Required</h2>
+                <div class="doc-grid">
+                    <div class="doc-item">
+                        Photographs of all Proposed Shareholders & Directors</div>
+                    <div class="doc-item">
+                        PAN card Copy of all Proposed Shareholders & Directors</div>
+                    <div class="doc-item">D Proof - Driving License / Voter ID / Passport (anyone) of all Proposed Shareholders & Directors</div>
+                    <div class="doc-item">
+                        Address Proof - Bank Statement / Telephone or Mobile or Electricity Bill (not more than 30 days old) of all Proposed Shareholders & Directors</div>
+                    <div class="doc-item">
+                        Email ID and Mobile Numbers of all Proposed Shareholders & Directors</div>
+                        <div class="doc-item">
+                            Aadhar card ( Optional )
+                        </div>
+                            <div class="doc-item">
+                                Proposed Company Registered Office Address Proof - Telephone or Mobile or Electricity Bill (not more than 30 days old) + NOC from property owner</div>
+                                <div class="doc-item">
+                                    DIN ( Optional - In case any proposed director already have Active DIN)
+                                </div>
+                </div>
+            </div>
+
+
+           
+ <!-- Service Coverage -->
+ <section class="service-section">
+    <h2 style="color: #1e40af;border-bottom: 2px solid #003366;background-color: #f8fafc;">Company Registration Procedure in India
+        </h2>
+    <ul class="document-list">
+        <li>Documentation & Finalise Name: First we collect documents and then send you few papers for your signature on email. Then we collect scan copy of Signed Papers from you on email. Side by side we finalise 2 proposed name of company #We can complete this in day 1</li>
+        <li>DSC apply: Meanwhile we apply for Digital Signatures of all directors/shareholders. #We can complete this in day 1</li>
+        <li>Incorporation Filing:In day 2 we file Incorporation form with ROC. All Forms certified by CA or CS or CMA.</li>
+        <li>Company Approved:Generally ROC approve incorporation application in 1-2 days. Once your application approved, you will get certificate, PAN, TAN etc.
+        </li>
+        
+</section>
+
+<!-- Pre-requisite Section -->
+<section class="prerequisite-section">
+    <h2 style="color: #1e40af;border-bottom: 2px solid #003366;">Pre-requisite for Company Incorporation
+    </h2>
+    <ul class="document-list">
+        <li>Proposed Company name must be unique. The suggested name should not match or identical with any existing companies or trademarks in India. # We help here to choose name.
+        </li>
+        <li>All Proposed Directors must have Active DIN
+        </li>
+        <li>Digital Signature for proposed Directors/Shareholders
+        </li>
+        <li>Decide Paid-up Share Capital and share % between Shareholders
+        </li>Decide Authorised Share Capital. ROC Fee & Stamp duty based on Authorised Capital. Low Capital - Less Govt Fee.
+    </li>
+        <li>Decide Company Registration State and Office address
+        </li>
+        <li>Decide Bank Authorised Signatory and Bank name to open your account (ICICI, BOb, Kotak, PNB)
+        </li>
+    </ul>
+</section>
+
+<section class="prerequisite-section">
+    <h2 style="color: #1e40af;border-bottom: 2px solid #003366;">What are the various Compliances you need to do post incorporation of a PLC
+    </h2>
+    <ul class="document-list">
+        <li>File Commencement of Business (COB) e-form INC 20A within 180 days of incorporation. </li>
+        <li>Appointment of an Statutory Auditor ( Practicing Chartered accountant) for Auditing Books of accounts and issue audited Annual Financial Statement.
+        </li>
+        <li>Filling of ROC Annual Forms 
+        </li>
+        <li>Filing of Director e-KYC
+
+        </li>
+    </ul>
+</section>
+
+<!-- Rest of your content remains the same -->
+</div>
+</body>
+</html>
+
+            
+       

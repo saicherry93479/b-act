@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B.Act Advisors - Employee Provident Fund Registration</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: #2c4ead;
+            padding: 1rem;
+            text-align: left;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .header-section {
+            background-color: #f8fafc;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 5px;
+            text-align:left;
+        }
+
+        .header-section h1 {
+            color: #1e40af;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .header-section p {
+            color: #666;
+            font-size: 1.2rem;
+        }
+
+        h2 {
+            color: #1e40af;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #003366;
+            padding-bottom: 0.5rem;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .section-item {
+            background-color: #f8fafc;
+            color: #333;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+
+        .section-item:hover {
+            transform: translateX(10px);
+        }
+
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .price-card {
+            border: 1px solid #ddd;
+            padding: 1.5rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .price-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border-color: #1e40af;
+        }
+
+        .price {
+            color: #1e40af;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .go-btn {
+            background-color: #2c4ead;
+            color: white;
+            padding: 0.5rem 2rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .go-btn:hover {
+            background-color: #1e40af;
+            transform: translateY(-2px);
+        }
+
+        .faq-section {
+            margin-top: 2rem;
+        }
+
+        .faq-item {
+            border: 1px solid #ccc;
+            padding: 1rem;
+            border-radius: 5px;
+            background-color: #fff;
+            cursor: pointer;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.active {
+            background-color: #f5f5f5;
+            border-color: #003366;
+        }
+
+        .faq-question {
+            color: #1e40af;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .faq-answer {
+            margin-top: 0.5rem;
+            display: none;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: #003366;
+        }
+
+        @media (max-width: 768px) {
+            .pricing-cards {
+                grid-template-columns: 1fr            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">B.Act Advisors</div>
+
+    <div class="content">
+        <div class="header-section">
+            <h1>Employee Provident Fund Registration</h1>
+            <p>Mandatory for companies with 20 or more employees earning up to Rs 15,000 PM</p>
+        </div>
+
+        <div class="section">
+            <h2>EPF at a Glance</h2>
+            <div class="section-item">Every establishment in which 20 or more employees are working (whether employed directly or through contractors) shall comply with the Employees Provident Fund (EPF) Scheme under The Employees’ Provident Funds and Miscellaneous Provisions Act, 1952.</p></div>
+            <div class="section-item">EPF Contribution on employees' salary (Basic + DA + Retaining Allowance) drawing up to Rs. 15,000:</p></div>
+            <div class="section-item">12% of Basic (including DA & Retaining Allowance) by the employee from their salary.</li></div>
+            <div class="section-item">Equal amount (i.e., 12% of Basic) contributed by the employer, with 8.33% diverted to the Employees Pension Scheme (EPS) and 0.5% towards Employees' Deposit Linked Insurance (EDLI).</li></div>
+            <div class="section-item">Employer pays an additional 0.85% as EPF admin fee and 0.01% as EDLI admin charges.</li></div>
+            <div class="section-item">In certain specified cases, EPF contribution rates may apply at 10% for both employee and employer.</p></div>
+        </div>
+        <div class="section">
+            <h2>Registration Process of Employees Provident Fund</h2>
+            <div class="section-item">Employer Registration: Create User Name & Password. For new employer registration, fill up employer particulars with full address, valid mobile number, email id, and create a User name and Password with mobile PIN verification on the unified portal of EPFO.</div>
+            <div class="section-item">Registration of DSC: Once your User Name and Password are created, the next step is the registration of DSC (Digital Signature Certificate) of the Employer, which is a prerequisite to submit the OLRE application.</div>
+            <div class="section-item">Prepare OLRE application: Ensure you have PAN of the entity, registration certificate/license, and address proof. Fill up the application carefully, as after submission, the edit option is not available. You have the option to save the application with partially filled data.</div>
+            <div class="section-item">Upload Documents and Attach DSC: Once the application fill-up is complete and saved, upload all relevant documents and attach the DSC of the employer.</div>
+        </div>
+
+        <div class="section">
+            <h2>Our Service Package Inclusion for Registration of Employees Provident Fund</h2>
+            <div class="section-item">Consultation: Our Consultant first gives on-call consultation about the process of registration with the authority, guidelines, and documents required.</div>
+            <div class="section-item">Application Preparation: Our expert prepares your application and coordinates with you for all the relevant employee data and documents required.</div>
+            <div class="section-item">Application Filing: As soon as your documents reach us and your application is processed properly, we start processing your PF registration and submit it to the authority.</div>
+            <div class="section-item">Update Status: We inform you of the updated status regularly.</div>
+            <div class="section-item">Registration No. & UAN for Employees: Our expert will provide the PF registration number for your business and the 12-digit UAN number for your employees within 4-7 days.</div>
+        </div>
+
+
+
+        <div class="section">
+            <h2>Our Pricing</h2>
+            <div class="pricing-cards">
+                <div class="price-card">
+                    <h3>New Registration - EPF (Employees up to 50)</h3>
+                    <div class="price">Rs. 5000</div>
+                    <button class="go-btn">Select Package</button>
+                </div>
+                <div class="price-card">
+                    <h3>New Registration - EPF (Employees up to 100)</h3>
+                    <div class="price">Rs. 8000</div>
+                    <button class="go-btn">Select Package</button>
+                </div>
+                <div class="price-card">
+                    <h3>New Registration - EPF (Employees up to 250)</h3>
+                    <div class="price">Rs. 15000</div>
+                    <button class="go-btn">Select Package</button>
+                </div>
+                <div class="price-card">
+                    <h3>New Registration - EPF (Employees more than 250)</h3>
+                    <div class="price">Customized Fee</div>
+                    <button class="go-btn">Select Package</button>
+                </div>
+                <div class="price-card">
+                    <h3>New Registration - EPF & ESI (Employees up to 50)</h3>
+                    <div class="price">Rs. 10000</div>
+                    <button class="go-btn">Select Package</button>
+                </div>
+                <div class="price-card">
+                    <h3>New Registration - EPF & ESI (Employees up to 100)</h3>
+                    <div class="price">Rs. 15000</div>
+                    <button class="go-btn">Select Package</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Documents Required for EPF Registration</h2>
+            <div class="section-item">Permanent Account Number (PAN)</div>
+            <div class="section-item">Digital Signature of Employer</div>
+            <div class="section-item">Bank Details (Cancelled Cheque)</div>
+            <div class="section-item">Address Proof (COI/Telephone/Electricity/Water Bill)</div>
+            <div class="section-item">Partnership Deed (for Partnership Firm)</div>
+            <div class="section-item">Certificate of Registration (for Partnership Firm)</div>
+            <div class="section-item">Startup India DIPP Certificate (for startups)</div>
+            <div class="section-item">Udyog Aadhar/MSME Certificate (if MSME Enterprise)</div>
+            <div class="section-item">Factory License (for Factory)</div>
+            <div class="section-item">Consent letter of the majority of Employees (in case of Voluntary Registration)</div>
+            <div class="section-item">List of Eligible Employees with Salary breakup</div>
+        </div>
+        <div class="section">
+            <h2>Legal Requirements of Employer towards Employees Provident Fund Scheme</h2>
+            <div class="section-item">Comply Rule & Take Registration: It is a statutory obligation of the employers on which EPF Scheme applies under the EPF & MP Act, 1952, to comply with the provisions of the Act and take EPF employer registration.</div>
+            <div class="section-item">Enroll Eligible Employee: Enrolment of all eligible employees on its rolls (regular or contractual) – wages up to Rs 15,000 at the time of joining the establishment. Generate UAN for new employees and upload KYC information.</div>
+            <div class="section-item">PF Contribution: Employer contributes 12% of salary (Basic + DA + Retaining allowance) and an equal % deducted from employee's salary as an employee contribution part per month and deposit with EPF Account within the due date.</div>
+            <div class="section-item">File Monthly Return: Every month, the employer must file PR return online with details of Employee, salary, and PF contribution amount within the due date.</div>
+            <div class="section-item">Remittance of Monthly PF: Challan generates online based on return uploaded. The employer may choose to make the payment through internet banking of SBI or take a printout of the Challan and pay at any designated branch of State Bank of India (SBI).</div>
+            <div class="section-item">Verify Employee KYC: Verify and confirm that all employees have KYC (Aadhaar, Bank Account, PAN) compliant UAN (Universal Account Number).</div>
+            <div class="section-item">Ensure Contractor has Deposited PF: Confirm remittance status of contractual employees belonging to an EPF registered establishment before releasing payment to such contractors.</div>
+            <div class="section-item">Maintenance of Records: Payroll - Wage record and books of Account, Employee Attendance Register to be maintained under other laws. It is suggestible to preserve records for at least 7-10 years.</div>
+        </div>
+
+        <div class="section">
+            <h2>List of Compliances after Registration of Employees Provident Fund</h2>
+            <div class="section-item">Enroll all eligible employees on its rolls (regular or contractual).</div>
+            <div class="section-item">Deduct PF from Employee's Salary and make own contribution.</div>
+            <div class="section-item">On-time deposit of PF amount with EPFO.</div>
+            <div class="section-item">File online monthly return.</div>
+            <div class="section-item">Ensure contractor has deposited PF against all contractual employees working in your company before you settle contractor payment.</div>
+        </div>
+
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <div class="faq-question">Why do you need FinTax Corporate Professional's service? <span class="faq-toggle">+</span></div>
+                <div class="faq-answer">It is important your application is filed correctly and properly as per legal requirement. Our experts are well experienced in this line to get your work done smoothly.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What is the full form of UAN number? <span class="faq-toggle">+</span></div>
+                <div class="faq-answer">Full form of UAN is Universal Account Number. UAN is allotted by EPFO and can be used anywhere in India. The employee can track and check the EPF balance against his EPF account. Every EPF member is given a UAN number and EPF member ID with first employment. The UAN does not change with the change of job. This portable number helps the employee to transfer the PF balance while changing the job. The PF member ID changes with every job. It is given by the employer.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What do you mean by salary for this purpose? <span class="faq-toggle">+</span></div>
+                <div class="faq-answer">Salary or Wages is Basic Pay plus Dearness Allowance (DA) plus Retaining Allowance.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">How PF is calculated on salary? <span class="faq-toggle">+</span></div>
+                <div class="faq-answer">PF is calculated on the contributions made by the employee as well as the employer. Contribution made by the employee equals 12% of his/her Basic Pay plus Dearness Allowance (DA) plus Retaining Allowance.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What if EPF registration is not done? <span class="faq-toggle">+</span></div>
+                <div class="faq-answer">As per the rule, within one month of EPF Scheme applicability on employer, it is the legal obligation of the employer to get registered with EPFO and open an EPF account (UAN) of all employees drawing monthly salary up to Rs 15,000. PENALTY APPLY FOR DELAY REGISTRATION.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Do I need to be physically present for the process? <span class="faq-toggle">+</span></div>
+                <div class="faq-answer">No, you don't need to be physically present for the process. The process is 100% online.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Is Permanent Account Number compulsory for Registration of EPF? <span class="faq-toggle">+</span></div>
+                <div class="faq-answer">Yes.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Is Digital Signature of Employer mandatory in EPF Registration and Return Filing? <span class="faq-toggle">+</span></div>
+                <div class="faq-answer">Yes. Class 2 DSC is required of the employer and must be registered before filing the registration application and in all return filings.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">How PF is deducted from salary? <span class="faq-toggle">+</span></div> 
+                <div class="faq-answer">For PF deduction, the maximum limit of salary of the employee is Rs 15,000 per month. This means that even if the employee's salary is above Rs 15,000, the employer is liable to contribute only on Rs 15,000, which amounts to Rs 1,800.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What is an Employee Provident Fund (EPF) account? <span class="faq-toggle">+</span></div>
+                <div class="faq-answer">EPF is a part of your salary, which is deducted every month from your salary and deposited on your behalf by the employer. If you work in an establishment having 20 or more employees and your salary is up to Rs 15,000, then the employer pays the same amount as it is deducted from your account. When you leave the firm, you can apply and withdraw the amount saved.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What are the penal provisions in the EPF & MP Act 1952 for non-compliance of Employer and Employee contribution? <span class="faq-toggle">+</span></div>
+                <div class="faq-answer">12% per annum simple interest is payable for delay payment of EPF plus: <br>
+                1) Default less than 2 months - 5% <br>
+                2) Default is above 2 months but less than 4 months - 10% <br>
+                3) Default is above 4 months but less than 6 months – 15% <br>
+                4) Default is above 6 months – 25% <br>
+                Apart from the above, further consequences for default include: <br>
+                1) Attachment of Bank Accounts and Realisation of dues from Debtors [Garnishee Order] <br>
+                2) Attachment of movable and immovable properties. <br>
+                3) Arrest and detention in Prison. Action under section 406/409 of the Indian Penal Code [Criminal Law] and Section 110 of Cr. P.C Prosecution. <br>
+                4) Prosecution for Non-payment of contributions normally ends in favor of the Department. Mandatory punishment of detention in Prison is provided.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Can an eligible employee choose not to contribute to EPF? <span class="faq-toggle">+</span></div>
+                <div class="faq-answer">No. As per the provisions of the EPF & MP Act 1952, no eligible employee has the option of staying away from the contribution. It is mandatory to contribute to the fund if the establishment and employee both are coming under the provisions of the Act.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What are the benefits of EPF contribution to employees? <span class="faq-toggle">+</span></div>
+                <div class="faq-answer">Employee Provident Fund is a very important investment for the necessities of our future. The contribution towards the fund is eligible for tax deduction u/s 80C of the Income Tax Act. The interest and maturity value received from EPF is also exempt from tax. Secondly, partial withdrawals are allowed for specific expenses such as house construction, higher education, marriage, illness, etc. As part of the scheme, the employees are eligible for pension upon retirement.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">An establishment which had more than 20 employees at the time of registration but later reduced to 10 employees. Will the EPF Scheme still apply? <span class="faq-toggle">+</span></div>
+                <div class="faq-answer">Yes. Any establishment which has been covered under the Act once shall continue to be governed by the Act even if the number of persons employed therein at any time falls below 20.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Is a trainee or Apprentice an employee under the Act? <span class="faq-toggle">+</span></div>
+                <div class="faq-answer">A trainee is considered an employee as per the Act. However, if the trainee is an apprentice under the Apprentice’s Act, then he/she will not be considered an employee under this Act.</div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Can an employee opt out of the EPF scheme? <span class="faq-toggle">+</span></div>
+                <div class="faq-answer">Yes, an employee can opt out of the EPF scheme if his/her monthly salary (basic + DA + retaining allowance) is more than 15,000, but the employee has to decide it before becoming a member of EPF. Once the employee becomes a PF member, he/she can’t leave it until they are in the job.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Can an Employer legally deduct his own contribution from the salary of Employee? <span class="faq-toggle">+</span></div>
+                <div class="faq-answer">According to EPF rules, an employer can’t deduct his contribution part from the employee's salary. It is illegal.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What is the employee strength in EPF Applicability for Co-operative societies? <span class="faq-toggle">+</span></div>
+                <div class="faq-answer">Co-operative societies are expected to register if their employee strength increases to 50 or more, and registered organizations continue to be under the purview of the rules and regulations of the Act even if their employee strength falls below the minimum specified number.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What is the Concept of Employees Provident Fund behind its applicability started in India? <span class="faq-toggle">+</span></div>
+                <div class="faq-answer">A provident fund is created to provide financial stability and security to the working class. An employee begins contributing to this fund on a monthly basis when he/she starts out as an employee. The purpose of an EPF is to help employees save a part of their salary every month to be used when the employee is no longer fit to carry on working, i.e., when the employee has to retire from service, or is terminated, or is retrenched for any valid reasons.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">What does contribution mean in the context of EPF? <span class="faq-toggle">+</span></div>
+                <div class="faq-answer">Contribution means a contribution payable in respect of a member under a scheme or the contribution payable in respect of an employee to whom the insurance scheme applies. Therefore, both the employer and employee contribute to the Employees Provident Fund at a rate of 12% of the basic salary and dearness allowance (if any) every month. This fund is maintained and overseen by the Employees Provident Fund Organisation of India (EPFO). Any company with over 20 employees is required by law to register with the EPFO, which is the authority made under the said Act to check the correct implementation of the Act.</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            item.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>One Person Company (OPC) Incorporation</title>
+    <style>
+        /* Add your CSS styles here */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: #1e40af;
+            padding: 1rem;
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        .nav-links h3 {
+            color: white;
+            text-decoration: none;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .header-section {
+            background-color: #f8fafc;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 5px;
+            border-bottom: 2px solid #003366;
+        }
+
+        .header-section h1 {
+            color: #1e40af;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-section p {
+            color: #666;
+        }
+
+        .characteristics {
+            margin: 2rem 0;
+            
+        }
+
+        .char-item {
+            background-color: #f8fafc;
+            color: rgb(10, 5, 5);
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+
+        .char-item:hover {
+            transform: translateX(10px);
+        }
+
+        .documents {
+            margin: 2rem 0;
+        }
+
+        .documents h2 {
+            color: #1e40af;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #003366;
+        }
+
+        .doc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .doc-item {
+            border: 1px solid #ccc;
+            padding: 1.5rem;
+            border-radius: 5px;
+            background-color: #f8fafc;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+            border-bottom: 2px solid #003366;
+        }
+
+        .doc-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .work-flow {
+            display: flex;
+            justify-content: space-between;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .work-step {
+            text-align: center;
+            padding: 1.5rem;
+            flex: 1;
+            min-width: 220px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .work-step h3 {
+            margin-bottom: 1rem;
+            color: #1e40af;
+        }
+
+        .work-step:nth-child(1) { background-color: #e0f7fa; }
+        .work-step:nth-child(2) { background-color: #ffccbc; }
+        .work-step:nth-child(3) { background-color: #fff59d; }
+        .work-step:nth-child(4) { background-color: #c8e6c9; }
+
+        .cost-section {
+            margin: 2rem 0;
+        }
+
+        .cost-section h2 {
+            color: #1e40af;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #003366;
+        }
+
+        .cost-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .cost-item {
+            border: 1px solid #ccc;
+            padding: 1.5rem;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .cost-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .price {
+            font-size: 1.4rem;
+            color: #1e40af;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .cost-item button {
+            padding: 0.7rem 1.5rem;
+            background-color: #1e40af;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .cost-item button:hover {
+            background-color: #1e40af;
+            
+        }
+
+        .faq-section {
+            margin: 2rem 0;
+        }
+
+        .faq-section h2 {
+            color: #1e40af;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #003366;
+            
+        }
+
+        .faq-item {
+            margin: 1rem 0;
+            padding: 1.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.active {
+            background-color: #f5f5f5;
+            border-color: #1e40af;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: left;
+            color: #1e40af;
+            font-weight: 600;
+        }
+
+        .faq-answer {
+            margin-top: 1rem;
+            display: none;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: #1e40af;
+        }
+        
+        /* Hover effect for Service Coverage list items */
+        .service-section .document-list li {
+            transition: transform 0.2s, background-color 0.2s;
+            padding: 1rem;
+            border-radius: 4px;
+        }
+
+        .service-section .document-list li:hover {
+            transform: translateX(5px);
+            background-color: #f8fafc; /* Light blue background on hover */
+            cursor: pointer;
+        }
+
+        /* Hover effect for Pre-requisite list items */
+        .prerequisite-section .document-list li {
+            transition: transform 0.2s, background-color 0.2s;
+            padding: 1rem;
+            border-radius: 4px;
+        }
+
+        .prerequisite-section .document-list li:hover {
+            transform: translateX(5px);
+            background-color: #f8fafc; /* Light blue background on hover */
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="navbar">
+                <div class="nav-links">
+                    <h3>B.Act Advisors</h3>
+                    <!-- Add more navigation links if needed -->
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="content">
+            <div class="header-section">
+                <h1>Incorporation of One Person Company (OPC)</h1>
+                <p>Ideal for small, single-person businesses. Get started with minimal compliance requirements.</p>
+            </div>
+
+            <div class="characteristics">
+                <h2 style="color: #1e40af;border-bottom: 2px solid #003366;background-color: #f8fafc;">Benefits of One Person Company</h2>
+                <div class="char-item">Single-person control and management.</div>
+                <div class="char-item">Limited liability and easy incorporation process.</div>
+                <div class="char-item">Eligible for startup India recognition and tax exemption.</div>
+                <div class="char-item">Can have a single shareholder and director.</div>
+            </div>
+
+            <div class="documents">
+                <h2 style="color: #1e40af;">Documents Required</h2>
+                <div class="doc-grid">
+                    <div class="doc-item">Photographs</div>
+                    <div class="doc-item">PAN Card Copy</div>
+                    <div class="doc-item">ID Proof (Aadhar/Driving License)</div>
+                    <div class="doc-item">Address Proof (Utility Bill)</div>
+                    <div class="doc-item">Nominee's ID Proof</div>
+                </div>
+            </div>
+
+            <div class="work-flow">
+                <div class="work-step">
+                    <h3>Step 1</h3>
+                    <p>Documentation & Finalize Name</p>
+                </div>
+                <div class="work-step">
+                    <h3>Step 2</h3>
+                    <p>DSC Application</p>
+                </div>
+                <div class="work-step">
+                    <h3>Step 3</h3>
+                    <p>Incorporation Filing</p>
+                </div>
+                <div class="work-step">
+                    <h3>Step 4</h3>
+                    <p>Company Approved</p>
+                </div>
+            </div>
+
+            <div class="cost-section">
+                <h2 style="color: #1e40af;">Cost of Company Incorporation</h2>
+                <div class="cost-grid">
+                    <!-- OPC Option 1 -->
+                    <div class="cost-item">
+                        <img src="https://via.placeholder.com/60" alt="Icon" style="display: block; margin: 0 auto;">
+                        <h3>OPC Option 1</h3>
+                        <p>Authorized Capital up to Rs 10 Lakh</p>
+                        <div class="price">Rs. 14000</div>
+                        <button class="pricing-button">select Package</button>
+                    </div>
+
+                    <!-- OPC Option 2 -->
+                    <div class="cost-item">
+                        <img src="https://via.placeholder.com/60" alt="Icon" style="display: block; margin: 0 auto;">
+                        <h3>OPC Option 2</h3>
+                        <p>Authorized Capital above Rs 10 Lakhs</p>
+                        <div class="price">Customize Fee</div>
+                        <button class="pricing-button">Contact Us</button>
+                    </div>
+
+                    <!-- Startup OPC 1 -->
+                    <div class="cost-item">
+                        <img src="https://via.placeholder.com/60" alt="Icon" style="display: block; margin: 0 auto;">
+                        <h3>Startup OPC 1</h3>
+                        <p>OPC + Startup India Recognition + MSME + GST</p>
+                        <div class="price">Rs. 27000</div>
+                        <button class="pricing-button">select Package</button>
+                    </div>
+
+                    <!-- Startup OPC 2 -->
+                    <div class="cost-item">
+                        <img src="https://via.placeholder.com/60" alt="Icon" style="display: block; margin: 0 auto;">
+                        <h3>Startup OPC 2</h3>
+                        <p>OPC + Startup India Recognition + MSME + GST + Basic Website</p>
+                        <div class="price">Rs. 34000</div>
+                        <button class="pricing-button">select Package</button>
+                    </div>
+                </div>
+                <p class="note">
+                    The above fee for selected states only. In few states, stamp duty payable extra as per actual. For more than 1 director, additional fee @ Rs 1200/-.
+                </p>
+            </div>
+ <!-- Service Coverage -->
+ <section class="service-section">
+    <h2 style="color: #1e40af;border-bottom: 2px solid #003366;background-color: #f8fafc;">our service-section</h2>
+    <ul class="document-list">
+        <li>Company Certificate of Incorporation</li>
+        <li>Memorandum of Association & Article of Association (MOA & AOA)</li>
+        <li>PAN Card and TAN Allotment</li>
+        <li>EPF & ESI Registration</li>
+        <li>Digital Signatures (Class 2)</li>
+        <li>Directors Identification Number (DIN)</li>
+        <li>Assist in Bank A/c Opening</li>
+        <li>Professional Tax Registration ( in Maharastra Only)</li>
+        <li>GST Registration (Optional)</li>
+</section>
+
+<!-- Pre-requisite Section -->
+<section class="prerequisite-section">
+    <h2 style="color: #1e40af;border-bottom: 2px solid #003366;">Pre-requisite for  OPC Incorporation</h2>
+    <ul class="document-list">
+        <li>Proposed Company name must be unique. The suggested name should not match or identical with any existing companies or trademarks in India. # We help here to choose name.</li>
+        <li>All Proposed Director(s) must have Active DIN</li>
+        <li>Digital Signature for proposed Director(s)/Shareholder</li>
+        <li>Decide Paid-up Share Capital</li>
+        <li>Decide Authorised Share Capital. ROC Fee & Stamp duty based on Authorised Capital. Low Capital - Less Govt Fee.</li>
+        <li>Decide Company Registration State and Office address</li>
+        <li>Decide Bank Authorised Signatory and Bank name to open your account (ICICI, BOb, Kotak, PNB)</li>
+    </ul>
+</section>
+
+<section class="prerequisite-section">
+    <h2 style="color: #1e40af;border-bottom: 2px solid #003366;">What are the various Compliances you need to do post incorporation of a OPC</h2>
+    <ul class="document-list">
+        <li>What are the various Compliances you need to do post incorporation of a OPC</li>
+        <li>Appointment of an Statutory Auditor ( Practicing Chartered accountant) for Auditing Books of accounts and issue audited Annual Financial Statement.</li>
+        <li>Filling of ROC Annual Forms </li>
+        <li>Filing of Director e-KYC
+        </li>
+    </ul>
+</section>
+
+<!-- Rest of your content remains the same -->
+</div>
+</body>
+</html>
+
+            
+        </div>
+        <div class="content">
+            <div class="faq-section">
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What is One Person Company?
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        A One Person Company (OPC) is a business structure in India where a single individual can form and operate a company. It provides legal recognition and limited liability protection to the sole shareholder.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What are the Advantages / features of the OPC?
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        The key advantages of an OPC include:
+                        <ul>
+                            <li>Easy to set up and operate</li>
+                            <li>Limited liability for the sole shareholder</li>
+                            <li>Separate legal entity with its own PAN and bank account</li>
+                            <li>Can avail tax benefits and incentives</li>
+                            <li>Easier to maintain accounts and compliance</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What are the documents required for Company Registration?
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        The required documents for company registration include:
+                        <ul>
+                            <li>PAN cards of the shareholder and director</li>
+                            <li>Passport photos of the shareholder and director</li>
+                            <li>Aadhaar cards of the shareholder and director</li>
+                            <li>Address proof of the shareholder and director</li>
+                            <li>Partnership deed (for partnerships)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What Type of Business Entities are in India?
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        The main types of business entities in India include:
+                        <ul>
+                            <li>Sole Proprietorship</li>
+                            <li>Partnership</li>
+                            <li>Limited Liability Partnership (LLP)</li>
+                            <li>Private Limited Company</li>
+                            <li>One Person Company (OPC)</li>
+                            <li>Public Limited Company</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What are the Minimum Requirement of Company Registration?
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        The minimum requirements for company registration in India include:
+                        <ul>
+                            <li>Minimum of one shareholder and one director</li>
+                            <li>Minimum paid-up capital of Rs. 1 lakh</li>
+                            <li>Registered office address in India</li>
+                            <li>Unique Company Identification Number (CIN)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is there any threshold limits for an OPC to mandatory get converted?
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, there are certain threshold limits for an OPC to mandatorily get converted to a private limited company:
+                        <ul>
+                            <li>Paid-up capital exceeds Rs. 50 lakhs</li>
+                            <li>Average annual turnover for the preceding 3 financial years exceeds Rs. 2 crores
+                        </ul>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Are there any hidden charges after I take any of your service?
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        No, there are no hidden charges. The price quoted for each service option is the final cost without any additional fees or charges.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Can an existing Company be converted to other form of other type of Company?
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, an existing company can be converted to a different type of company structure, such as:
+                        <ul>
+                            <li>Conversion of a private limited company to a public limited company</li>
+                            <li>Conversion of a partnership firm to a private limited company</li>
+                            <li>Conversion of a sole proprietorship to a private limited company</li>
+                        </ul>
+                        The specific process and requirements depend on the type of conversion.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Can a salaried person become director of company?
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, a salaried person can become a director of a company. The person must meet the eligibility criteria set by the Companies Act, such as being of sound mind, not disqualified, and in compliance with the company's articles of association.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Can I Change address of company after I take a commercial space?
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        Yes, you can change the registered address of your company after taking a commercial space. The process involves filing the necessary forms with the Registrar of Companies and updating the company's records.
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <script>
+            document.querySelectorAll('.faq-question').forEach(question => {
+                question.addEventListener('click', () => {
+                    const item = question.parentElement;
+                    const wasActive = item.classList.contains('active');
+                    
+                    // Close all FAQ items
+                    document.querySelectorAll('.faq-item').forEach(faqItem => {
+                        faqItem.classList.remove('active');
+                        faqItem.querySelector('.toggle').textContent = '+';
+                    });
+                    
+                    // If the clicked item wasn't active, open it
+                    if (!wasActive) {
+                        item.classList.add('active');
+                        question.querySelector('.toggle').textContent = '-';
+                    }
+                });
+            });
+        </script>
+    </body>
+    </html>

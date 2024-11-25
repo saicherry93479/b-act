@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TDS / TCS / Business ITR Compliance</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: #2c4ead;
+            padding: 1rem;
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .header-section {
+            background-color: #f8fafc;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 5px;
+        }
+
+        .header-section h1 {
+            color: #1e40af;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-section p {
+            color: #666;
+        }
+
+        .characteristics {
+            margin: 2rem 0;
+        }
+
+        .char-item {
+            background-color: #f8fafc;
+            color: rgb(10, 5, 5);
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+
+        .char-item:hover {
+            transform: translateX(10px);
+        }
+
+        .documents {
+            margin: 2rem 0;
+        }
+
+        .doc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .doc-item {
+            border: 1px solid #ccc;
+            padding: 1.5rem;
+            border-radius: 5px;
+            background-color: #f8fafc;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        .doc-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .work-flow {
+            display: flex;
+            justify-content: space-between;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .work-step {
+            text-align: center;
+            padding: 1.5rem;
+            flex: 1;
+            min-width: 220px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .work-step h3 {
+            margin-bottom: 1rem;
+            color: #003366;
+        }
+
+        .work-step:nth-child(1) { background-color: #e0f7fa; }
+        .work-step:nth-child(2) { background-color: #ffccbc; }
+        .work-step:nth-child(3) { background-color: #fff59d; }
+        .work-step:nth-child(4) { background-color: #c8e6c9; }
+
+        .cost-section {
+            margin: 2rem 0;
+        }
+
+        .cost-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .cost-item {
+            border: 1px solid #ccc;
+            padding: 1.5rem;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .cost-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .price {
+            font-size: 1.4rem;
+            color: #1e40af;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .cost-item button {
+            padding: 0.7rem 1.5rem;
+            background-color: #1e40af;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .cost-item button:hover {
+            background-color: #003366;
+        }
+
+        h2 {
+            color: #1e40af;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #003366;
+        }
+
+        @media (max-width: 768px) {
+            .work-flow {
+                flex-direction: column;
+            }
+
+            .work-step {
+                margin: 0.5rem 0;
+            }
+
+            .doc-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* FAQ Section Styling */
+        .faq-section {
+            margin-top: 3rem;
+        }
+
+        .faq-section h2 {
+            font-size: 1.8rem;
+            color: #1e40af;
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        /* FAQ Item Styling */
+        .faq-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 1rem;
+            background-color: #ffffff;
+            color: #1e40af;
+            text-align: left;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            outline: none;
+        }
+
+        .faq-question:hover {
+            background-color: #f8fafc;;
+        }
+
+        /* FAQ Answer Styling */
+        .faq-answer {
+            padding: 1rem;
+            background-color: #f8fafc;
+            border-left: 4px solid #1e40af;
+            margin-top: 1rem;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* Toggle FAQ Answer visibility */
+        .faq-item.active .faq-question {
+            background-color: #f8fafc;;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-links">
+            <h3>B.Act Advisors</h3>
+        </div>
+    </nav>
+
+    <div class="content">
+        <div class="header-section">
+            <h1>TDS / TCS / Business ITR Compliance</h1>
+            <p>At a glance</p>
+        </div>
+
+        <div class="characteristics">
+            <h2>Overview</h2>
+            <div class="char-item">Tax Deducted at Source (TDS), Tax Collected at Source (TCS) and Business Income Tax Return (B-ITR) are 3 important Prime Direct Tax Compliance which every Firm/LLP/Company doing business in India has to comply and follow the Income Tax Act and Rules.</div>
+            <div class="char-item">TDS deduction rate varies expenditure wise as mentioned in Sectins 192 to 196D of the Income Tax Act.</div>
+            <div class="char-item">Tax Collection at Source (TCS) - Under section 206C of the Income Tax Act, tax has to be collected at source on sale of Category A, B, C & D  goods.</div>
+            <div class="char-item">Non Compliance of Tax deduction and/or Deposit shall attract Interest per month and Non Filing of Return attract per day penalty and Prosecution (Imprisonment).</div>
+        </div>
+
+        <div class="documents">
+            <h2>Non Compliance Impact</h2>
+            <div class="doc-grid">
+                <div class="doc-item">Failure to deduct TDS or deduct but fail to pay, the entire amount that was deductible is disallowed u/s 40(a)(ia) for the purpose of computing income taxable income from Business.</div>
+                <div class="doc-item">Income Tax assessing office charge Income Tax with Interest on such expenditure.</div>
+            </div>
+        </div>
+
+        <div class="work-flow">
+            <h2>Benefits of Compliance</h2>
+        </div>
+        <div><div class="work-step">
+            <h3>Save Penalty & Interest</h3>
+            <p>Ontime filing of return, Payment of Tax within due date saves heavy penalty and Interest.</p>
+        </div>
+        <div class="work-step">
+            <h3>Safe from unforeseen Notice</h3>
+            <p>Accuracy in Return filing, ontime compliances helps to keep your records updated with Income Tax department.</p>
+        </div>
+        <div class="work-step">
+            <h3>Avoid any Demand</h3>
+            <p>Accuracy in Return filing, proper compliances as per rules and legal provisions helps to minimise or avoid any Tax Demand on Assessment.</p>
+        </div>
+        <div class="work-step">
+            <h3>Loss Carry forward</h3>
+            <p>Current year's business loss as per Income Tax Act can be carried forward and setoff future income only if ITR file within the due date.</p>
+        </div></div>
+
+        <div class="cost-section">
+            <h2>Our Pricing</h2>
+            <div class="cost-grid">
+                <div class="cost-item">
+                    <h3>New Company</h3>
+                    <p>For first year Compliance</p>
+                    <div class="price">₹20000</div>
+                    <button>select Package</button>
+                </div>
+                <div class="cost-item">
+                    <h3>Existing Company</h3>
+                    <p>Turnover below Rs 50 lakhs</p>
+                    <div class="price">₹20000</div>
+                    <button>select Package</button>
+                </div>
+                <div class="cost-item">
+                    <h3>Existing Company</h3>
+                    <p>Turnover Rs 50 lakhs - less than 1 Crores</p>
+                    <div class="price">₹25000</div>
+                    <button>select Package</button>
+                </div>
+                <div class="cost-item">
+                    <h3>Existing Company</h3>
+                    <p>Turnover Rs 1 Crores - less than 5 Crores</p>
+                    <div class="price">₹30000</div>
+                    <button>select Package</button>
+                </div>
+               
+            </div>
+        </div>
+
+        <div class="service-coverage">
+            <h2>Our Retainership Service Package Inclusion</h2>
+            <div class="char-item">Review of Expenditures</div>
+            <div class="char-item">Tax Payment</div>
+            <div class="char-item">Return Filing</div>
+            <div class="char-item">Issue of TDS/TCS Certificates</div>
+            <div class="char-item">Advisory on Foreign outward remittances</div>
+        </div>
+
+        <div class="pre-requisite">
+            <h2>Penalties for Non-Compliance</h2>
+            <div class="char-item">Non Filing of TDS/TCS Return - Penalty Rs 200 per day per return</div>
+            <div class="char-item">Non Deposit or Short Deposit of TDS/TCS - Interest @ 1.5% Per Month</div>
+            <div class="char-item">Non Deduction or Short Deduction of TDS/TCS - Interest @ 1% Per Month</div>
+            <div class="char-item">Imprisonment - If assessee fails to pay the deducted TDS to the government</div>
+            <div class="char-item">Penalty Under Section 271H - Rs 10,000 to Rs 1,00,000</div>
+        </div>
+
+        <div class="compliances">
+            <h2>Key Compliance Timelines</h2>
+            <div class="char-item">TDS Return Filing Last Date: Quarterly</div>
+            <div class="char-item">TCS Return Filing Last Dates: Quarterly</div>
+            <div class="char-item">TDS/TCS Payment Due Date: Monthly (7th of following month)</div>
+            <div class="char-item">Issue of TDS/TCS Certificates: Within 15 days of filing return</div>
+        </div>
+
+        
+    </div>
+
+    <script>
+        // FAQ toggling script
+    </script>
+</body>
+</html>

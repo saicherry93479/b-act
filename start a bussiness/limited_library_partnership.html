@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLP Incorporation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: #1e40af;
+            padding: 1rem;
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        .nav-links h3 {
+            color: white;
+            text-decoration: none;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .header-section {
+            background-color: #f5f5f5;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 5px;
+        }
+
+        .header-section h1 {
+            color: #1e40af;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-section p {
+            color: #666;
+        }
+
+        .characteristics {
+            margin: 2rem 0;
+        }
+
+        .char-item {
+            background-color: #f5f4f4;
+            color: rgb(10, 5, 5);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+
+        .char-item:hover {
+            transform: translateX(10px);
+        }
+
+        .doc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .doc-item {
+            border: 1px solid #ccc;
+            padding: 1.5rem;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        .doc-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .work-flow {
+            display: flex;
+            justify-content: space-between;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .work-step {
+            text-align: center;
+            padding: 1.5rem;
+            flex: 1;
+            min-width: 220px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .work-step h3 {
+            margin-bottom: 1rem;
+            color: #1e40af;
+        }
+
+        .work-step:nth-child(1) { background-color: #e0f7fa; }
+        .work-step:nth-child(2) { background-color: #ffccbc; }
+        .work-step:nth-child(3) { background-color: #fff59d; }
+        .work-step:nth-child(4) { background-color: #c8e6c9; }
+
+        .cost-section {
+            margin: 2rem 0;
+        }
+
+        .cost-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .cost-item {
+            border: 1px solid #ccc;
+            padding: 1.5rem;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .cost-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .price {
+            font-size: 1.4rem;
+            color: #1e40af;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .cost-item button {
+            padding: 0.7rem 1.5rem;
+            background-color: #1e40af;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .cost-item button:hover {
+            background-color: #1e40af;
+        }
+
+        h2 {
+            color: #1e40af;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #1e40af;
+        }
+
+        .faq-section {
+            margin: 2rem 0;
+        }
+
+        .faq-item {
+            margin: 1rem 0;
+            padding: 1.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.active {
+            background-color: #f5f5f5;
+            border-color: #1e40af;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #1e40af;
+            font-weight: 600;
+        }
+
+        .faq-answer {
+            margin-top: 1rem;
+            display: none;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: #1e40af;
+        }
+
+        @media (max-width: 768px) {
+            .work-flow {
+                flex-direction: column;
+            }
+
+            .work-step {
+                margin: 0.5rem 0;
+            }
+
+            .doc-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-links">
+            <h3>B.Act Advisors</h3>
+        </div>
+    </nav>
+
+    <div class="content">
+        <div class="header-section">
+            <h1>Limited Liability Partnership (LLP) Registration</h1>
+            <p>Register your business as an LLP in India</p>
+        </div>
+
+        <div class="characteristics">
+            <h2>Key Features of LLP</h2>
+            <div class="char-item">Two or more persons can form a partnership to conduct business</div>
+            <div class="char-item">Limited liability protection for all partners</div>
+            <div class="char-item">Flexible internal management structure</div>
+            <div class="char-item">Perpetual succession regardless of changes in partners</div>
+            <div class="char-item">Separate legal entity status from its partners</div>
+        </div>
+
+        <div class="documents">
+            <h2>Required Documents</h2>
+            <div class="doc-grid">
+                <div class="doc-item">Digital Signature Certificate (DSC) of Partners</div>
+                <div class="doc-item">PAN Card and Aadhar Card of Partners</div>
+                <div class="doc-item">Passport Size Photographs</div>
+                <div class="doc-item">Address Proof of Registered Office</div>
+                <div class="doc-item">No Objection Certificate (NOC) from Owner</div>
+                <div class="doc-item">Bank Statement/Utility Bills</div>
+            </div>
+        </div>
+        <h2 style="color: #1e40af;">Registration Procedure in India Limited Liability Partnership (LLP)</h2>
+        <div class="work-flow">
+            <div class="work-step">
+                <h3>Name Approval</h3>
+                <p>Get your LLP name approved</p>
+            </div>
+            <div class="work-step">
+                <h3>Document Filing</h3>
+                <p>Submit required documents</p>
+            </div>
+            <div class="work-step">
+                <h3>LLP Agreement</h3>
+                <p>Draft and file LLP agreement</p>
+            </div>
+            <div class="work-step">
+                <h3>Registration</h3>
+                <p>Obtain LLP registration</p>
+            </div>
+        </div>
+
+        <div class="cost-section">
+            <h2>Registration Packages</h2>
+            <div class="cost-grid">
+                <div class="cost-item">
+                    <h3>Basic LLP</h3>
+                    <p>Up to 5 Partners</p>
+                    <div class="price">₹10,000</div>
+                    <button>Select Package</button>
+                </div>
+                <div class="cost-item">
+                    <h3>Standard LLP</h3>
+                    <p>Up to 10 Partners</p>
+                    <div class="price">₹14,000</div>
+                    <button>Select Package</button>
+                </div>
+                <div class="cost-item">
+                    <h3>Premium LLP</h3>
+                    <p>Complete Startup Package</p>
+                    <div class="price">₹24,000</div>
+                    <button>Select Package</button>
+                </div>
+                <div class="cost-item">
+                    <h3>Startup LLP Business 2</h3>
+                    <p>Advanced Startup Package</p>
+                    <div class="price">₹31,000</div>
+                    <ul class="package-features">
+                    </ul>
+                    <button>Select Package</button>
+                    
+                </div>
+            </div>
+        </div>
+
+                <!-- LLP Section -->
+                <section class="llp-section">
+                   
+                    <div class="llp-info">
+                        <!-- Previous LLP items remain the same -->
+                    </div>
+                </section>
+        
+                <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLP Incorporation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: #1e40af;
+            padding: 1rem;
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        .nav-links h3 {
+            color: white;
+            text-decoration: none;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .header-section {
+            background-color: #f5f5f5;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 5px;
+        }
+
+        .header-section h1 {
+            color: #1e40af;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-section p {
+            color: #666;
+        }
+
+        .characteristics {
+            margin: 2rem 0;
+        }
+
+        .char-item {
+            background-color: #f8fafc;
+            color: rgb(10, 5, 5);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+
+        .char-item:hover {
+            transform: translateX(10px);
+        }
+
+        .doc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .doc-item {
+            border: 1px solid #ccc;
+            padding: 1.5rem;
+            border-radius: 5px;
+            background-color: #f8fafc;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        .doc-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .work-flow {
+            display: flex;
+            justify-content: space-between;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .work-step {
+            text-align: center;
+            padding: 1.5rem;
+            flex: 1;
+            min-width: 220px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .work-step h3 {
+            margin-bottom: 1rem;
+            color: #003366;
+        }
+
+        .work-step:nth-child(1) { background-color: #e0f7fa; }
+        .work-step:nth-child(2) { background-color: #ffccbc; }
+        .work-step:nth-child(3) { background-color: #fff59d; }
+        .work-step:nth-child(4) { background-color: #c8e6c9; }
+
+        .cost-section {
+            margin: 2rem 0;
+        }
+
+        .cost-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .cost-item {
+            border: 1px solid #ccc;
+            padding: 1.5rem;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .cost-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .price {
+            font-size: 1.4rem;
+            color: #1e40af;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .cost-item button {
+            padding: 0.7rem 1.5rem;
+            background-color: #1e40af;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .cost-item button:hover {
+            background-color: #1e40af;
+        }
+
+        h2 {
+            color: #1e40af;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #1e40af;
+        }
+
+        .faq-section {
+            margin: 2rem 0;
+        }
+
+        .faq-item {
+            margin: 1rem 0;
+            padding: 1.5rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.active {
+            background-color: #f5f5f5;
+            border-color: #1e40af;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #1e40af;
+            font-weight: 600;
+        }
+
+        .faq-answer {
+            margin-top: 1rem;
+            display: none;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: #1e40af;
+        }
+
+        /* Hover effect for Service Coverage list items */
+        .service-section .document-list li {
+            transition: transform 0.2s, background-color 0.2s;
+            padding: 1rem;
+            border-radius: 4px;
+        }
+
+        .service-section .document-list li:hover {
+            transform: translateX(5px);
+            background-color: #f0f4ff; /* Light blue background on hover */
+            cursor: pointer;
+        }
+
+        /* Hover effect for Pre-requisite list items */
+        .prerequisite-section .document-list li {
+            transition: transform 0.2s, background-color 0.2s;
+            padding: 1rem;
+            border-radius: 4px;
+        }
+
+        .prerequisite-section .document-list li:hover {
+            transform: translateX(5px);
+            background-color: #f9f9f9; /* Light gray background on hover */
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .work-flow {
+                flex-direction: column;
+            }
+
+            .work-step {
+                margin: 1rem 0;
+            }
+
+            .doc-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+        <!-- Other sections remain the same -->
+
+        <!-- Service Coverage -->
+        <section class="service-section">
+            <h2>Our Service Coverage</h2>
+            <ul class="document-list">
+                <h3>After LLP incorporation, you will receive below documents from our side</h3>
+                <li>Certificate of Incorporation of LLP</li>
+                <li>LLP Agreement</li>
+                <li>PAN card</li>
+                <li>One Digital Signatures (Class 2)</li>
+                <li>Directors Identification Number (DIN)</li>
+            </ul>
+        </section>
+
+        <!-- Pre-requisite Section -->
+        <section class="prerequisite-section">
+            <h2>Pre-requisite for LLP formation</h2>
+            <ul class="document-list">
+                <li>Proposed LLP name must be unique. The suggested name should not match or identical with any existing companies/LLP or trademarks in India.</li>
+                <li>All Proposed Partners must have Active DIN</li>
+                <li>Digital Signature of any one Partner</li>
+                <li>Decide Capital contribution by each partners</li>
+                <li>Stamp duty on LLP Agreement based on Capital Contribution. Low Capital = Less Govt Fee.</li>
+                <li>Decide LLP State and Office address</li>
+            </ul>
+        </section>
+
+        <!-- Rest of your content remains the same -->
+    </div>
+</body>
+</html>
+
+                
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <!-- Previous head content remains the same -->
+            <style>
+                /* Previous styles remain the same */
+        
+                /* Enhanced FAQ Section Styles */
+                .faq-section {
+            margin: 2rem 0;
+        }
+<html>
+<html> lang="en">
+<head>
+    <style>
+        .faq-section {
+            padding: 2rem;
+            background-color: #ffffff; /* Changed to white */
+            margin-top: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-section h2 {
+            text-align: left;
+            color: #1e40af;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            font-weight: bold;
+        }
+
+        .faq-items {
+            margin-top: 20px;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #ddd;
+            cursor: pointer;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item h3 {
+            position: relative;
+            padding: 1rem;
+            background-color: #ffffff; /* Changed to white */
+            color: #1e40af;
+            font-size: 1rem;
+            margin: 0;
+            transition: background-color 0.3s;
+            padding-right: 40px;
+        }
+
+        .faq-item h3:hover {
+            background-color: #f8f8f8; /* Lighter hover effect for white background */
+        }
+
+        .faq-toggle {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-weight: bold;
+            transition: transform 0.3s;
+            font-size: 24px;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: translateY(-50%) rotate(180deg);
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 1rem;
+            color: #333;
+            background-color: #fff;
+            line-height: 1.5;
+        }
+
+        .faq-answer p {
+            margin: 0;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* Add a subtle border to separate items better on white background */
+        .faq-item {
+            border: 1px solid #eee;
+            border-radius: 4px;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-items">
+                <div class="faq-item">
+                    <h3>
+                        What is One Person Company?
+                        <span class="faq-toggle">+</span>
+                    </h3>
+                    <div class="faq-answer">
+                        <p>An OPC is a type of private limited company with a single shareholder and director, introduced to help solo entrepreneurs.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h3>
+                        What are the Advantages / Features of the OPC?
+                        <span class="faq-toggle">+</span>
+                    </h3>
+                    <div class="faq-answer">
+                        <p>Limited liability, single ownership, and fewer compliance requirements make OPCs advantageous for small businesses.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h3>
+                        What are the documents required for Company Registration?
+                        <span class="faq-toggle">+</span>
+                    </h3>
+                    <div class="faq-answer">
+                        <p>Documents like PAN, Aadhar, address proof, and ID proof are needed for registration.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h3>
+                        What Type of Business Entities are in India?
+                        <span class="faq-toggle">+</span>
+                    </h3>
+                    <div class="faq-answer">
+                        <p>In India, popular entities include sole proprietorship, partnership, LLP, private limited, and public limited companies.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h3>
+                        What are the Minimum Requirement of Company Registration?
+                        <span class="faq-toggle">+</span>
+                    </h3>
+                    <div class="faq-answer">
+                        <p>Minimum requirements include a unique name, a registered office, and one director/shareholder for OPC.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h3>
+                        Is there any threshold limits for an OPC to mandatory get converted?
+                        <span class="faq-toggle">+</span>
+                    </h3>
+                    <div class="faq-answer">
+                        <p>Yes, OPC must convert to a private or public limited company if its turnover exceeds certain limits.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h3>
+                        Are there any hidden charges after I take any of your service?
+                        <span class="faq-toggle">+</span>
+                    </h3>
+                    <div class="faq-answer">
+                        <p>No hidden charges are applied; all fees are transparently communicated upfront.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h3>
+                        Can an existing Company be converted to other form of other type of Company?
+                        <span class="faq-toggle">+</span>
+                    </h3>
+                    <div class="faq-answer">
+                        <p>Yes, companies can be converted to other forms, such as from LLP to private limited or vice versa.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h3>
+                        Can a salaried person become director of company?
+                        <span class="faq-toggle">+</span>
+                    </h3>
+                    <div class="faq-answer">
+                        <p>Yes, a salaried individual can become a director, but they may need employer permission if employed elsewhere.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <h3>
+                        Can I Change address of company after I take a commercial space?
+                        <span class="faq-toggle">+</span>
+                    </h3>
+                    <div class="faq-answer">
+                        <p>Yes, the company address can be changed with the necessary filings to the ROC.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                        otherItem.querySelector('.faq-toggle').textContent = '+';
+                    }
+                });
+                
+                item.classList.toggle('active');
+                const toggle = item.querySelector('.faq-toggle');
+                toggle.textContent = item.classList.contains('active') ? '−' : '+';
+            });
+        });
+    </script>
+</body>
+</html>

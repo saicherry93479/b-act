@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employees State Insurance Registration</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+        }
+
+        .navbar {
+            background-color: #2c4ead;
+            padding: 1rem;
+            text-align: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .header-section {
+            background-color: #e9eff5;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .header-section h1 {
+            color: #1e40af;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-section p {
+            color: #666;
+            font-size: 1.2rem;
+        }
+
+        h2 {
+            color: #1e40af;
+            font-size: 1.8rem;
+            margin: 1.5rem 0 1rem;
+            border-bottom: 2px solid #2c4ead;
+            padding-bottom: 0.5rem;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .section-item {
+            background-color: #f8fafc;
+            color: #333;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+
+        .section-item:hover {
+            transform: translateX(5px);
+        }
+
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .price-card {
+            border: 1px solid #ddd;
+            padding: 1.5rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .price-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            border-color: #1e40af;
+        }
+
+        .price {
+            color: #1e40af;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .go-btn {
+            background-color: #2c4ead;
+            color: white;
+            padding: 0.5rem 2rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .go-btn:hover {
+            background-color: #1e40af;
+            transform: translateY(-2px);
+        }
+
+        .faq-section {
+            margin-top: 2rem;
+        }
+
+        .faq-item {
+            border: 1px solid #ccc;
+            padding: 1rem;
+            border-radius: 5px;
+            background-color: #fff;
+            cursor: pointer;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.active {
+            background-color: #fbfbfb;
+            border-color: #f3f7f6;
+        }
+
+        .faq-question {
+            color: #1e40af;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .faq-answer {
+            margin-top: 0.5rem;
+            display: none;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem ;
+            color: #1e40af;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                text-align: center;
+            }
+
+            .content {
+                padding: 0.5rem;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            .price-card {
+                padding: 1rem;
+            }
+
+            .go-btn {
+                padding: 0.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">Employees State Insurance Registration</div>
+
+    <div class="content">
+        <div class="header-section">
+            <h1>Employees State Insurance Registration</h1>
+            <p>Mandatory for companies with 10/20 or more employees, Salary up to Rs 21,000 PM</p>
+        </div>
+
+        <div class="section-item">
+            <h2>ESI Scheme Overview</h2>
+            <p>The ESI Scheme is governed by the Employees' State Insurance Corporation, implemented as per the ESI Act 1948. It applies to factories and establishments with 10 or more workers (20 or more in some states) drawing a salary of up to Rs. 21,000 per month.</p>
+            <p>Employer contributes 4.75% of the wages, while employees contribute 1.75%. Employees earning less than Rs. 137 per day are exempt from their contribution.</p>
+        </div>
+
+        <div class="section">
+            <h2>Legal Requirements for Employers</h2>
+            <div class="section-item">Comply with rules and take registration within 15 days of applicability.</div>
+            <div class="section-item">Enroll all eligible employees and provide them with a Temporary Identity Certificate (TIC).</div>
+            <div class="section-item">File monthly returns online with details of employees and contributions.</div>
+            <div class="section-item">Maintain records such as wage records, accident registers, and inspection books.</div>
+            <div class="section-item">
+                File Monthly Return
+                Every month Employer file ESI return online with details of Employee, salary and ESI contribution amount within the due date.</div>
+            <div class="section-item">	
+                Remittance of Monthly ESI
+                The total amount of contribution (Employer and Employee) is to be deposited in any branch of SBI by ONLINE generation of a challan through ESIC portal using his credentials. ESIC has facilitated payment of ESI Contribution online by employer via the payment gateway of 58 banks in addition to SBI.</div>
+            <div class="section-item">
+                File Half Yearly Return
+                File half yearly return and report to ESIC authorities if there is any change in business activity, address, ownership and the management, maintenance of registers and records etc.</div>   
+        </div>
+
+        <div class="section">
+            <h2>Documents Required for Registration</h2>
+            <div class="section-item">Permanent Account Number (PAN)</div>
+            <div class="section-item">Digital Signature of Employer</div>
+            <div class="section-item">Bank Details (Cancelled Cheque)</div>
+            <div class="section-item">List of Eligible Employees with Salary breakup</div>
+            <div class="section-item">Address Proof (COI/Telephone/Electricity/Water bill)</div>
+            <div class="section-item">Partnership Deed (for Partnership Firm)</div>
+            <div class="section-item">Memorandum and Articles of Association of the Company</div>
+            <div class="section-item">Factory License/Shop & Establishment Registration Certificate</div>
+        </div>
+        <div class="section">
+            <h2>List of Compliances after Registration of Employee State Insurance</h2>
+            <div class="section-item">Enrolment of all eligible employees.</div>
+            <div class="section-item">Deduct ESI from Employee's Salary 1.75% and Make own contribution 4.75%.</div>
+            <div class="section-item">On time Deposit of ESI Amount. ESIC</div>
+            <div class="section-item">File Online monthly Return</div>
+            <div class="section-item">Maintaining Records and Register as per law            </div>
+        </div>
+        <div class="section">
+            <h2>Our Service package inclusion for Registration of Employees State Insurance</h2>
+            <div class="section-item">Consultation
+                Our Consultant first give on call consultation about the Process of Registration with the Authority, Guidelines and Documents requirement.</div>
+            <div class="section-item">Application Preparation
+                Our Expert prepare your application and co-ordinate with you for all the relevant employee data and documents requirement.</div>
+            <div class="section-item">Application Filing
+                As soon as your documents reach to us and your application is processed properly, we start processing your ESI Registration and submit to ESIC online.</div>
+            <div class="section-item">Update Status
+                We intimate you updated status regularly.</div>
+            <div class="section-item">Registration No.
+                Our expert will provide the 17 Digit ESI registration number within 4-7 days</div>          
+        </div>
+        <div class="section">
+            <h2>Registration process of Employees State Insurance</h2>
+            <div class="section-item">Employer Signup
+                For new employer registration, first step is Signup on ESIC website with Company Name, Principal Employer, State, Region, Email ID and Mobile No.</div>
+            <div class="section-item">Get User ID and Password to Login
+                An email is sent to the user after successful sign-up along with login credential at registered Email ID</div>
+            <div class="section-item">Select Unit type
+                Once you Login and process for New Registration, Select your Establishment Type:- 1) Factory or 2) Shop Establishment and Proceed for next.</div>
+            <div class="section-item">Prepare Application Form
+                Fill up all the Information one by one in Form-01. Put Employee Details Gender wise Total ( Employed Directly or Through Contractor)</div>
+            <div class="section-item">Upload Documents and Attach DSC
+                Once Application fill up is complete and all Particulars correctly disclosed in the form, next work is upload all relevent documents and attach DSC of the employer.</div>
+        </div>
+
+        <div class="section">
+            <h2>Our Pricing</h2>
+            <div class="pricing-cards">
+                <div class="price-card">
+                    <h3>New Registration - ESI (Employees up to 50)</h3>
+                    <div class="price">Rs. 5,000</div>
+                    <button class="go-btn">Select Package</button>
+                </div>
+                <div class="price-card">
+                    <h3>New Registration - ESI (Employees up to 100)</h3>
+                    <div class="price">Rs. 8,000</div>
+                    <button class="go-btn">Select Package</button>
+                </div>
+                <div class="price-card">
+                    <h3>New Registration - ESI (Employees up to 250)</h3>
+                    <div class="price">Rs. 15,000</div>
+                    <button class="go-btn">Select Package</button>
+                </div>
+                <div class="price-card">
+                    <h3>New Registration - ESI (Employees more than 250)</h3>
+                    <div class="price">Customise Fee</div>
+                    <button class="go-btn">Select Package</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Benefits of ESI Registration</h2>
+            <div class="section-item">Medical benefits for employees and their family members.</div>
+            <div class="section-item">Cash benefits including sickness, maternity, and disablement benefits.</div>
+            <div class="section-item">Death benefits and funeral expenses for dependents.</div>
+            <div class="section-item">Vocational and physical rehabilitation services.</div>
+        </div>
+
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</ ```html
+            <h2>Frequently Asked Questions</h2>
+
+            <div class="faq-item">
+                <div class="faq-question">Why do you need FinTax Corporate Professional's service?<span class="faq-toggle">+</span></div>
+                <div class="faq-answer">
+                    It is important your application is filed correctly and properly as per legal requirements. Our experts are well experienced to get your work done smoothly.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What do you mean by salary for this ESI purpose?<span class="faq-toggle">+</span></div>
+                <div class="faq-answer">
+                    Salary or wages is Basic Pay plus Dearness Allowance (DA) plus Retaining Allowance.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Do I need to be physically present for the process?<span class="faq-toggle">+</span></div>
+                <div class="faq-answer">
+                    No, you don't need to be physically present for the process. The process is 100% online.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What if ESI registration is not done?<span class="faq-toggle">+</span></div>
+                <div class="faq-answer">
+                    As per the rule, within 15 days of ESI Scheme applicability, it is the legal obligation of the employer to register with ESIC and get insurance numbers for all employees drawing a monthly salary up to Rs 21,000.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Is Permanent Account Number compulsory for Registration of ESI?<span class="faq-toggle">+</span></div>
+                <div class="faq-answer">
+                    Yes, a Permanent Account Number (PAN) is mandatory for ESI registration.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Is Digital Signature of Employer mandatory in ESI Registration?<span class="faq-toggle">+</span></div>
+                <div class="faq-answer">
+                    Yes, a Class 2 Digital Signature Certificate (DSC) is required for ESI registration and to file all returns.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How is ESI deducted from salary?<span class="faq-toggle">+</span></div>
+                <div class="faq-answer">
+                    For ESI deduction, the maximum limit of salary of the employee is Rs 21,000 per month. The employer is liable to contribute only on Rs 21,000, which amounts to Rs 998.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What is the time limit for Payment of ESI Contribution?<span class="faq-toggle">+</span></div>
+                <div class="faq-answer">
+                    The payment must be made within 21 days of the last day of the month in which the contribution is due.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // FAQ toggle functionality
+        const faqItems = document.querySelectorAll('.faq-item');
+
+        faqItems.forEach(item => {
+            item.querySelector('.faq-question').addEventListener('click', () => {
+                item.classList.toggle('active');
+                const answer = item.querySelector('.faq-answer');
+                answer.style.display = item.classList.contains('active') ? 'block' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>

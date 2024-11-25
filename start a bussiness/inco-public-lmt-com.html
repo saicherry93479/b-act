@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incorporation of Public Limited Company in India</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: #2c4ead;
+            padding: 1rem;
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .header-section {
+            background-color: #f8fafc;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 5px;
+        }
+
+        .header-section h1 {
+            color: #1e40af;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-section p {
+            color: #666;
+        }
+
+        .characteristics {
+            margin: 2rem 0;
+        }
+
+        .char-item {
+            background-color: #f8fafc;
+            color: rgb(10, 5, 5);
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+
+        .char-item:hover {
+            transform: translateX(10px);
+        }
+
+        .documents {
+            margin: 2rem 0;
+        }
+
+        .doc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .doc-item {
+            border: 1px solid #ccc;
+            padding: 1.5rem;
+            border-radius: 5px;
+            background-color: #f8fafc;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        .doc-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .work-flow {
+            display: flex;
+            justify-content: space-between;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .work-step {
+            text-align: center;
+            padding: 1.5rem;
+            flex: 1;
+            min-width: 220px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .work-step h3 {
+            margin-bottom: 1rem;
+            color: #003366;
+        }
+
+        .work-step:nth-child(1) { background-color: #e0f7fa; }
+        .work-step:nth-child(2) { background-color: #ffccbc; }
+        .work-step:nth-child(3) { background-color: #fff59d; }
+        .work-step:nth-child(4) { background-color: #c8e6c9; }
+/* FAQ Section Styling */
+.faq-section {
+    margin-top: 3rem;
+}
+
+.faq-section h2 {
+    font-size: 1.8rem;
+    color: #1e40af;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+/* FAQ Item Styling */
+.faq-item {
+    margin-bottom: 1.5rem;
+}
+
+.faq-question {
+    width: 100%;
+    padding: 1rem;
+    background-color: #ffffff;
+    color: #1e40af;
+    text-align: left;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    outline: none;
+}
+
+.faq-question:hover {
+    background-color: #f8fafc;;
+}
+
+/* FAQ Answer Styling */
+.faq-answer {
+    padding: 1rem;
+    background-color: #f8fafc;
+    border-left: 4px solid #1e40af;
+    margin-top: 1rem;
+    display: none;
+}
+
+.faq-item.active .faq-answer {
+    display: block;
+}
+
+/* Toggle FAQ Answer visibility */
+.faq-item.active .faq-question {
+    background-color: #f8fafc;;
+}
+
+
+        h2 {
+            color: #1e40af;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #003366;
+        }
+
+        @media (max-width: 768px) {
+            .work-flow {
+                flex-direction: column;
+            }
+
+            .work-step {
+                margin: 0.5rem 0;
+            }
+
+            .doc-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+        .cost-section {
+    margin: 2rem 0;
+}
+
+.cost-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.cost-item {
+    border: 1px solid #ccc;
+    padding: 1.5rem;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.cost-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.price {
+    font-size: 1.4rem;
+    color: #1e40af;
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
+.cost-item button {
+    padding: 0.7rem 1.5rem;
+    background-color: #1e40af;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cost-item button:hover {
+    background-color: #003366;
+}
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-links">
+            <h3>B.Act Advisors</h3>
+        </div>
+    </nav>
+
+    <div class="content">
+        <div class="header-section">
+            <h1>Incorporation of Public Limited Company in India</h1>
+            <p>Ideal if your business is Large and Planning for Public Issue</p>
+        </div>
+
+        <div class="characteristics">
+            <h2>Features of a Public Limited Company (PLC)</h2>
+            <div class="char-item">Can raise large capital by issuing shares, listed on Stock Exchanges in India.</div>
+            <div class="char-item">Minimum 3 Directors and 7 Members/Shareholders required.</div>
+            <div class="char-item">Incorporation in 2 days | Includes Share Certificate, MOA/AOA, DSC, DIN, PAN & TAN, etc.</div>
+            <div class="char-item">Minimum Paid-up Capital of Rs. 5,00,000/-</div>
+            <div class="char-item">A Public Limited Company must include the word 'Limited' after its name.</div>
+            <div class="char-item">Issue Prospectus for the public to raise funds.</div>
+            <div class="char-item">Public Limited Company can raise funds from the public by issuing shares subject to compliance with the provisions of the Act.</div>
+            <div class="char-item">No limitation for the number of Members/shareholders.</div>
+            <div class="char-item">A Public Limited Company has all the advantages of a Private Limited Company and can have any number of members, ease in transfer of shareholding, and more transparency.</div>
+        </div>
+
+        <div class="documents">
+            <h2>Documents Required for Public Limited Company</h2>
+            <div class="doc-grid">
+                <div class="doc-item">Photographs of all Proposed Shareholders & Directors</div>
+                <div class="doc-item">PAN Card Copy of all Proposed Shareholders & Directors</div>
+                <div class="doc-item">ID Proof (Driving License / Voter ID / Passport) of all Proposed Shareholders & Directors</div>
+                <div class="doc-item">Address Proof (Bank Statement / Telephone Bill / Electricity Bill) of all Proposed Shareholders & Directors</div>
+                <div class="doc-item">Email ID and Mobile Numbers of all Proposed Shareholders & Directors</div>
+                <div class="doc-item">Proposed Company Registered Office Address Proof (NOC from property owner)</div>
+            </div>
+        </div>
+
+        <!-- New Sections Added -->
+
+       <!-- Cost Section -->
+<div class="cost-section">
+    <h2>Professional Fees</h2>
+    <div class="cost-grid">
+        <div class="cost-item">
+            <h3>Public Co. Option 1</h3>
+            <p>Authorised Capital upto Rs 10 Lakh and upto 4 Director and 7shareholder</p>
+            <div class="price">₹20000</div>
+            <button>select Package</button>
+        </div>
+        <div class="cost-item">
+            <h3>Public Co. Option 2</h3>
+            <p>Authorised Capital upto Rs 10 Lakh and upto 5 Director and 20 shareholder   </p>
+            <div class="price">₹30,000</div>
+            <button>select Package</button>
+        </div>
+        <div class="cost-item">
+            <h3>Public Co. Option 3</h3>
+            <p>Authorised Capital more than Rs 10 Lakh</p>
+            <div class="price">custmise fee</div>
+            <button>select Package</button>
+        </div>
+    </div>
+</div>
+
+
+        <div class="service-coverage">
+            <h2>Our Service Coverage</h2>
+            <div class="char-item">Certificate of Incorporation</div>
+            <div class="char-item">Memorandum of Association & Articles of Association (MOA & AOA)</div>
+            <div class="char-item">PAN Card and TAN Allotment</div>
+            <div class="char-item">EPF & ESI Registration</div>
+            <div class="char-item">Digital Signatures (Class 2)</div>
+            <div class="char-item">Directors Identification Number (DIN)</div>
+            <div class="char-item">Bank A/C Opening Assistance</div>
+            <div class="char-item">Professional Tax Registration (Maharashtra Only)</div>
+            <div class="char-item">GST Registration (Optional)</div>
+        </div>
+
+        <div class="pre-requisite">
+            <h2>Pre-requisite for Company Incorporation</h2>
+            <div class="char-item">Company name must be unique and should not match any existing companies or trademarks.</div>
+            <div class="char-item">Proposed Directors must have Active DIN.</div>
+            <div class="char-item">Digital Signature for Directors/Shareholders.</div>
+            <div class="char-item">Decide Paid-up Share Capital and share % between Shareholders.</div>
+            <div class="char-item">Decide Company Registration State and Office address.</div>
+        </div>
+
+        <div class="compliances">
+            <h2>Post-Incorporation Compliances</h2>
+            <div class="char-item">File Commencement of Business (COB) e-form INC 20A within 180 days of incorporation.</div>
+            <div class="char-item">Appointment of a Statutory Auditor for auditing books of accounts and issue of audited Annual Financial Statement.</div>
+            <div class="char-item">Filing of ROC Annual Forms and Director e-KYC.</div>
+            <div class="char-item">If listed, comply with SEBI, Stock Exchange and ROC provisions.</div>
+        </div>
+
+        <div class="service-coverage">
+            <h2>Why you may need Public Limited Company?</h2>
+            <div class="char-item">Raising capital is much easier for a public limited company through public subscription as well as stock market (if listed)</div>
+            <div class="char-item">As the number of shareholders is quite large, the risk borne by each shareholder is considerably low.</div>
+            <div class="char-item">Directors and Shareholders have no personal liabilities. Limited Liability protects the personal wealth of the shareholders and directors therefore owners will never lose more that they have invested.</div>
+            <div class="char-item">A public company can get its shares listed in a stock exchange therefore; people will be able to easily and quickly recognize the brand or name of the company. The more brand recognition a company has, the more business it will have.</div>
+            <div class="char-item">Management of the company is not confined to few persons. Shareholders have powers to elect and remove directors and they can exercise control over management in general meetings of the company.</div>
+            
+
+        
+            <!-- FAQ Section -->
+<div class="faq-section">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-item">
+        <button class="faq-question">What is Public Limited Company?</button>
+        <div class="faq-answer">
+            <p>A Public Limited Company is a company whose shares are offered to the general public and are tradable in the stock market. It is strictly regulated and required to disclose its financial status.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">What are the Advantages / features of the Public Limited Company?</button>
+        <div class="faq-answer">
+            <p>Public Limited Companies offer benefits such as raising capital easily, lower risk for shareholders, limited liability, brand recognition, and democratic management through shareholder involvement.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">What are the documents required for Company Registration?</button>
+        <div class="faq-answer">
+            <p>Documents required include photographs of shareholders and directors, PAN cards, ID and address proof, email ID, mobile numbers, and proposed registered office address proof, among others.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">What Type of Business Entities are there in India?</button>
+        <div class="faq-answer">
+            <p>India has several business entity types including Sole Proprietorship, Partnership, Limited Liability Partnership (LLP), Private Limited Company, and Public Limited Company.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">What is MOA and AOA?</button>
+        <div class="faq-answer">
+            <p>MOA (Memorandum of Association) and AOA (Articles of Association) are legal documents that define the company's scope, objectives, and the rules for its governance and management.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">What is Authorized Capital?</button>
+        <div class="faq-answer">
+            <p>Authorized Capital is the maximum capital that a company can issue in the form of shares. It is specified in the company's MOA and can be increased with shareholder approval.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">What is Paid-up Capital?</button>
+        <div class="faq-answer">
+            <p>Paid-up Capital refers to the amount of money that the company has actually received from shareholders in exchange for shares, as opposed to authorized capital which is the total available limit.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">What is Director Identification Number (DIN)?</button>
+        <div class="faq-answer">
+            <p>DIN is a unique identification number issued to a director of a company, required for all directors in India to register with the Ministry of Corporate Affairs (MCA).</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">What is Digital Signature Certificate (DSC)?</button>
+        <div class="faq-answer">
+            <p>DSC is an electronic equivalent of a handwritten signature, used for online filing and authentication of company documents during the registration process.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">Are there any hidden charges after I take any of your service?</button>
+        <div class="faq-answer">
+            <p>There are no hidden charges. All costs and fees are transparent and clearly communicated upfront before proceeding with any service.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">Can I Change the address of the company after I take a commercial space?</button>
+        <div class="faq-answer">
+            <p>Yes, the address of the company can be changed even after incorporation. You need to file the necessary forms with the Registrar of Companies (ROC) to update the address.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">Can a salaried person become director of a company?</button>
+        <div class="faq-answer">
+            <p>Yes, a salaried person can become a director of a company, provided they meet the eligibility criteria set by the Companies Act, 2013.</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">Can an existing company be converted to another form or other type of company?</button>
+        <div class="faq-answer">
+            <p>Yes, an existing company can be converted into another type of company (e.g., from Private Limited to Public Limited) by filing the necessary forms with the Ministry of Corporate Affairs (MCA).</p>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <button class="faq-question">What are the other registrations to be done by the company after incorporation?</button>
+        <div class="faq-answer">
+            <p>Post incorporation, a company must complete registrations such as GST, EPF, ESI, Professional Tax (in some states), and others as per business requirements.</p>
+        </div>
+    </div>
+</div>
+
+
+    <script>
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const toggle = item.querySelector('.faq-toggle');
+                item.classList.toggle('active');
+                toggle.textContent = item.classList.contains('active') ? '−' : '+';
+            });
+        });
+    </script>
+</body>
+</html>

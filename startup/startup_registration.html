@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B.Act Advisors - Startup India Registration</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: #2c4ead;
+            padding: 1rem;
+            text-align: left;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .header-section {
+            background-color: #f8fafc;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 5px;
+            text-align: left;
+        }
+
+        .header-section h1 {
+            color: #1e40af;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .header-section p {
+            color: #666;
+            font-size: 1.2rem;
+        }
+
+        h2 {
+            color: #1e40af;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #003366;
+            padding-bottom: 0.5rem;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .section-item {
+            background-color: #f8fafc;
+            color: #333;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+
+        .section-item:hover {
+            transform: translateX(10px);
+        }
+
+        .docs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .workflow {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .workflow-step {
+            flex: 1;
+            min-width: 220px;
+            padding: 1.5rem;
+            text-align: center;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        .workflow-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .price-card {
+            border: 1px solid #ddd;
+            padding: 1.5rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .price-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border-color: #1e40af;
+        }
+
+        .price {
+            color: #1e40af;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .benefit-item {
+            background-color: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .benefit-item:hover {
+            background-color: #f8fafc;
+            transform: translateY(-2px);
+        }
+
+        .go-btn {
+            background-color: #f5f5f5;
+            color: white;
+            padding: 0.5rem 2rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .go-btn:hover {
+            background-color: #f5f5f5;
+            transform: translateY(-2px);
+        }
+
+        .faq-section {
+            margin-top: 2rem;
+        }
+
+        .faq-item {
+            border: 1px solid #ccc;
+            padding: 1rem;
+            border-radius: 5px;
+            background-color: #fff;
+            cursor: pointer;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.active {
+            background-color: #f5f5f5;
+            border-color: #003366;
+        }
+
+        .faq-question {
+            color: #1e40af;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .faq-answer {
+            margin-top: 0.5rem;
+            display: none;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: #003366;
+        }
+
+        @media (max-width: 768px) {
+            .workflow {
+                flex-direction: column;
+            }
+            .docs-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">B.Act Advisors</div>
+
+    <div class="content">
+        <div class="header-section">
+            <h1>Startup India Registration Service</h1>
+            <p>Get your startup recognized by the Government of India in 2-3 working days</p>
+        </div>
+
+        <div class="section">
+            <h2>Eligibility Criteria</h2>
+            <div class="section-item">Only Pvt. Ltd. Company, OPC, LLP or Registered Partnership Firm registered in India</div>
+            <div class="section-item">Should be a new entity</div>
+            <div class="section-item">Turnover should not exceed Rs 100 crores in any previous year</div>
+            <div class="section-item">Not more than 10 years old for Startup recognition</div>
+            <div class="section-item">Working towards innovation, development or improvement of products/services</div>
+        </div>
+
+        <div class="section">
+            <h2>Benefits of Startup India Registration</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <h3>Tax Exemption</h3>
+                    <p>Income Tax Exemption benefits u/s 80IAC and U/s 56 relief for Angel Tax</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>Tender Participation</h3>
+                    <p>Relaxation in public procurement tenders for experience, EMD, or turnover criteria</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>Govt. Funding</h3>
+                    <p>Access to Rs 10,000 crores fund through SIDBI for startup investments</p>
+                </div>
+                <div class="benefit-item">
+                    <h3>IPR Benefits</h3>
+                    <p>50%-80% fee concession in IPR registration including Trademark, Patent</p>
+                </div>
+                <div class="benefits-grid">
+                <div class="benefit-item">
+                    <h3>Participate in various Govt. Scheme</h3>
+                    <p>Government issues day to day various schemes for startup to participate. For example, sustainable finance scheme, bank credit facilitation, raw material assistance, etc.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Required Documents</h2>
+            <div class="docs-grid">
+                <div class="section-item">Certificate of Incorporation</div>
+                <div class="section-item">PAN Card</div>
+                <div class="section-item">Company Details</div>
+                <div class="section-item">Directors/Partners Details</div>
+                <div class="section-item">Brief Business Description</div>
+                <div class="section-item">Website/Pitch Deck/Video/Patent</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Our Service Process</h2>
+            <div class="workflow">
+                <div class="workflow-step" style="background-color: #e0f7fa;">
+                    <h3>Consultation</h3>
+                    <p>Initial consultation about eligibility and requirements</p>
+                </div>
+                <div class="workflow-step" style="background-color: #ffccbc;">
+                    <h3>Application Prep</h3>
+                    <p>Prepare application and required write-ups</p>
+                </div>
+                <div class="workflow-step" style="background-color: #fff59d;">
+                    <h3>Submission</h3>
+                    <p>File application with DPIIT</p>
+                </div>
+                <div class="workflow-step" style="background-color: #c8e6c9;">
+                    <h3>Certificate</h3>
+                    <p>Get registration certificate in 2-3 working days</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Our Professional Fee</h2>
+            <div class="pricing-cards">
+                <div class="price-card">
+                    <h3>Basic Registration</h3>
+                    <p>Startup India Recognition Filing with existing website</p>
+                    <div class="price">Rs. 15,000</div>
+                    <button class="go-btn">Get Started</button>
+                </div>
+
+                <div class="price-card">
+                    <h3>Registration + Website</h3>
+                    <p>Recognition Filing + Basic 3-4 page static website</p>
+                    <div class="price">Rs. 22,000</div>
+                    <button class="go-btn">Get Started</button>
+                </div>
+
+                <div class="price-card">
+                    <h3>Complete Startup Package I</h3>
+                    <p>Company Formation + Registration + GST + MSME + PF/ESIC Number</p>
+                    <div class="price">Rs. 32,000</div>
+                    <button class="go-btn">Get Started</button>
+                </div>
+
+                <div class="price-card">
+                    <h3>Complete Startup Package II</h3>
+                    <p>Package I + Website (3-4 page static site for DIPP registration)</p>
+                    <div class="price">Rs. 39,000</div>
+                    <button class="go-btn">Get Started</button>
+                </div>
+            </div>
+        </div>
+    
+        <div class="section">
+            <h2>How to Apply for Tax Exemption Certificate U/s 80-IAC of Income Tax Act</h2>
+            <div class="section-item">As per Revised Rule vide Notification dated 11th April '2018 issued by Ministry of Commerce and Industry ( Department of Industrial Planning and Promotion) </div>
+            <div class="section-item">A Startup being a Private Limited Company or Limited Liability Partnership (LLP) incorporated after 1st April 2016 may, for obtaining a certificate for the purpose of section 80-IAC of the Income Tax Act, make an application in Form-I along with documents  specified theirein to the Board and the Board may after calling for such documents or information and making such enquires, as it may deem fit -
+
+            </div>
+            <div class="section-item">i) Issue Tax Exemption Certificate.
+
+                or
+                
+                ii) Reject the application by providing reasons.</div>
+            
+        </div>
+        <div class="section">
+            <h2>How to Apply for Tax Exemption Certificate U/s 56 (2) (viib) of Income Tax Act (Angel Tax)</h2>
+            <h3>As per Revised Rule vide Notification dated 11th April '2018 issued by Ministry of Commerce and Industry ( Department of Industrial Planning and Promotion) and subsequently amended on 19th February 2019- </h3>
+            <div class="section-item">ELIGIBILITY CRITERIA:-</h3>
+            <div class="section-item">(i)   the agreegate amount of paidup share capital and share premium of the startup after the proposed issue of share capital does not exceed Rs 25 crores.</div>
+            <div class="section-item">(ii)   the investor/proposed investor, who proposed to subscribe to the issue of share of the startup has
+
+               <div>a) the average returned income of the Rs 25 Lakhs or more for the proceeding three financial years, </div>
+       
+                b) the networth of Rs 2 Crores or more as on the last date of the proceeding financial year</div>
+            <div class="section-item">(iii)   the startup has obtained a report from a merchant banker specifying the fair market value of share in accordance with rule 11UA of the Income Tax Rule, 1962.</div>
+            <div class="section-item">(iv) Benefit available for 10 years.</div>
+            
+        </div>
+        <h3>APPLICATION & APPROVAL PROCESS:-</h3>
+        <div class="section-item">The application for approval under this para shall be made in Form-2 to the Board and shall be accompanied by documents specified therein</div>
+        <div class="section-item">And Board may after calling for such documents or information and making such enquires, as it may deem fit -</div>
+        <h3>Either</h2>
+        <div class="section-item">i) Grand approval for the purpose of Section 56(2)(viib) of the Act, specifying the relevent details, including details of investors, amounts of premium on which shares are to be issued and the latest date by which the shares are to be issued; </div>
+        <div class="section-item">or</div>
+        <div class="section-item">ii) Decline to grant the said approval after providing reasons.</div>
+
+ 
+             
+
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">Why choose B.Act Advisors Professional service?<span class="faq-toggle">+</span></div>
+                <div class="faq-answer">Our Professionals possess deep exposure in preparing applications and write-ups, helping you smoothly file your application with DIPP.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Do you work pan India for clients?<span class="faq-toggle">+</span></div>
+                <div class="faq-answer">Yes, we serve clients PAN India from our Branch Offices and Associate Startup Consultants in Major Cities. Startup India registration is managed centrally from our Delhi NCR Office.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What is the validity of Startup Recognition Certificate?<span class="faq-toggle">+</span></div>
+                <div class="faq-answer">The certificate is valid for up to 10 years from the date of incorporation/registration or until the turnover in any previous year exceeds Rs. 100 crores, whichever is earlier.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Is Tax Exemption automatic with Startup Recognition?<span class="faq-toggle">+</span></div>
+                <div class="faq-answer">No. As per notification dated 11.04.2018, to claim Tax benefit/Exemption under income tax act, you need to apply separately after getting your startup recognized.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">How long does it take to get the Recognition Certificate?<span class="faq-toggle">+</span></div>
+                <div class="faq-answer">Normally it takes 2-4 working days to get the certificate issued.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Is Tax Exemption is attached by default with all Startup Recognition?<span class="faq-toggle">+</span></div>
+                <div class="faq-answer">No. As per recent notification dt 11.04.2018, to claim Tax benefit/Exemption under income tax act, you need to apply separately after getting your startup recognised.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">How long it takes to get Startup India Recognition Certificate issued?<span class="faq-toggle">+</span></div>
+                <div class="faq-answer">Normally it takes 2-4 days.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Who is the authority to issue Startup Recognition Certificate?<span class="faq-toggle">+</span></div>
+                <div class="faq-answer">Startup Recognition Certificate issued by Ministry of Commerce and Industry ( Department for Promotion of Industry and Internal Trade)</div>
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                        otherItem.querySelector('.faq-toggle').textContent = '+';
+                    }
+                });
+                item.classList.toggle('active');
+                const toggle = item.querySelector('.faq-toggle');
+                toggle.textContent = item.classList.contains('active') ? '−' : '+';
+            });
+        });
+    </script>
+</body>
+</html>

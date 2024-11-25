@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accounting & Bookkeeping Outsourcing Company in India</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: #2c4ead;
+            padding: 1rem;
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .header-section {
+            background-color: #f8fafc;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 5px;
+        }
+
+        .header-section h1 {
+            color: #1e40af;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-section p {
+            color: #666;
+        }
+
+        .characteristics {
+            margin: 2rem 0;
+        }
+
+        .char-item {
+            background-color: #f8fafc;
+            color: rgb(10, 5, 5);
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+
+        .char-item:hover {
+            transform: translateX(10px);
+        }
+
+        .documents {
+            margin: 2rem 0;
+        }
+
+        .doc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .doc-item {
+            border: 1px solid #ccc;
+            padding: 1.5rem;
+            border-radius: 5px;
+            background-color: #f8fafc;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        .doc-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .work-flow {
+            display: flex;
+            justify-content: space-between;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .work-step {
+            text-align: center;
+            padding: 1.5rem;
+            flex: 1;
+            min-width: 220px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .work-step h3 {
+            margin-bottom: 1rem;
+            color: #003366;
+        }
+
+        .work-step:nth-child(1) { background-color: #e0f7fa; }
+        .work-step:nth-child(2) { background-color: #ffccbc; }
+        .work-step:nth-child(3) { background-color: #fff59d; }
+        .work-step:nth-child(4) { background-color: #c8e6c9; }
+
+        .faq-section {
+            margin-top: 3rem;
+        }
+
+        .faq-section h2 {
+            font-size: 1.8rem;
+            color: #1e40af;
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .faq-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 1rem;
+            background-color: #ffffff;
+            color: #1e40af;
+            text-align: left;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            outline: none;
+        }
+
+        .faq-question:hover {
+            background-color: #f8fafc;;
+        }
+
+        .faq-answer {
+            padding: 1rem;
+            background-color: #f8fafc;
+            border-left: 4px solid #1e40af;
+            margin-top: 1rem;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            background-color: #f8fafc;;
+        }
+
+        h2 {
+            color: #1e40af;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #003366;
+        }
+
+        .cost-section {
+            margin: 2rem 0;
+        }
+
+        .cost-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .cost-item {
+            border: 1px solid #ccc;
+            padding: 1.5rem;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .cost-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .price {
+            font-size: 1.4rem;
+            color: #1e40af;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .cost-item button {
+            padding: 0.7rem 1.5rem;
+            background-color: #1e40af;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .cost-item button:hover {
+            background-color: #003366;
+        }
+
+        @media (max-width: 768px) {
+            .work-flow {
+                flex-direction: column;
+            }
+
+            .work-step {
+                margin: 0.5rem 0;
+            }
+
+            .doc-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-links">
+            <h3>B.Act Advisors</h3>
+        </div>
+    </nav>
+
+    <div class="content">
+        <div class="header-section">
+            <h1>Accounting & Book Keeping Outsourcing Company in India</h1>
+            <p>Ideal for Startups and  Foreign Companies, to get their day to day accounting updated</p>
+        </div>
+
+        <div class="characteristics">
+            <h2>Book Keeping and Accounting Service at a glance</h2>
+            <div class="char-item">Many people use the terms book keeping and accounting interchangeably, but the fact is the former is the first step to the latter, i.e. book keeping is the stepping stone of accounting.</div>
+            <div class="char-item">Book keeping is an activity of recording the financial transactions of the company in a systematic manner. For example Transaction day book, Journal and Ledgers.</div>
+            <div class="char-item">Accounting is an orderly recording and reporting of the financial affairs of an organization for a particular period. For example Balance Sheet, Profit & Loss Account and Cash Flow Statement. Accounting clearly shows the financial position of the entity which mare book keeping job does not.</div>
+        </div>
+
+        <div class="characteristics">
+            <h2>LEGAL REQUIREMENTS</h2>
+            <div class="char-item">Various Law Regulating the business and Taxation in India has put legal compulsion to main Books of Accounts as per Law and Guidelines.</div>
+            <div class="char-item">Under Income Tax Act</div>
+            <div class="char-item">Under the Companies Act 2013</div>
+            <div class="char-item">Under GST Act</div>
+            <div class="char-item">Books of Accounts to be preserve for atleast 6-8 years under the provisions of different Acts in India.</div>
+        </div>
+
+        <div class="characteristics">
+            <h2>Benefits of Maintaining Books of Accounts</h2>
+            <div class="char-item">Comply Legal Requirement</div>
+            <div class="char-item">Forecast your business better</div>
+            <div class="char-item">Stay Organised with Clients</div>
+            <div class="char-item">Easy to prepare management accounts</div>
+            <div class="char-item">Easy access to Critical Data</div>
+            <div class="char-item">Make easy for Bank Finance & Private Funding</div>
+            <div class="char-item">Avoids interest and penalties Companies Act</div>
+        </div>
+
+        <div class="cost-section">
+            <h2>Our Pricing</h2>
+            <div class="cost-grid">
+                <div class="cost-item">
+                    <h3>New Company</h3>
+                    <p>For first year Compliance</p>
+                    <div class="price">Rs. 120000</div>
+                    <button>select Package</button>
+                </div>
+                <div class="cost-item">
+                    <h3>Existing Company</h3>
+                    <p>Turnover below Rs 1 Crore</p>
+                    <div class="price">Rs. 120000</div>
+                    <button>select Package</button>
+                </div>
+                <div class="cost-item">
+                    <h3>Existing Company</h3>
+                    <p>Turnover Rs 1 Crores - less than 5 Crores</p>
+                    <div class="price">Rs. 180000</div>
+                    <button>select Package</button>
+                </div>
+                <div class="cost-item">
+                    <h3>Existing Company</h3>
+                    <p>Turnover Rs 5 Crores - less than 10 Crores</p>
+                    <div class="price">Rs. 280000</div>
+                    <button>select Package</button>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="characteristics">
+            <h2>Our Book Keeping & Accounting Retainership Service Package Inclusion</h2>
+            <div class="char-item">Accounting Entries</div>
+            <div class="char-item">Invoicing</div>
+            <div class="char-item">Receivable Accounting</div>
+            <div class="char-item">Payable Accounting</div>
+            <div class="char-item">Reconciliation</div>
+            <div class="char-item">Financial Statements</div>
+            <div class="char-item">Tax Computation</div>
+            <div class="char-item">Use of Accounting Software</div>
+        </div>
+
+        <div class="characteristics">
+            <h2>How we Maintain Books of Accounts for various Clients</h2>
+            <div class="char-item">For Indian Company</div>
+            <div class="char-item">For Firm/LLP</div>
+            <div class="char-item">For Foreign Company</div>
+        </div>
+
+        <div class="characteristics">
+            <h2>Legal Requirements of Accounting and Mainting Books of Accounts in India</h2>
+            <div class="char-item">Under Income Tax Act</div>
+            <div class="char-item">Under the Companies Act 2013</div>
+            <div class="char-item">Under GST Act</div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const toggle = item.querySelector('.faq-toggle');
+                item.classList.toggle('active');
+                toggle.textContent = item.classList.contains('active') ? '−' : '+';
+            });
+        });
+    </script>
+</body>
+</html>

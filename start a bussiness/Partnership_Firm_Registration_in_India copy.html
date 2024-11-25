@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B.Act Advisors - Partnership Registration</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: #2c4ead;
+            padding: 1rem;
+            text-align: left;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .header-section {
+            background-color: #f8fafc;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 5px;
+            text-align:left;
+        }
+
+        .header-section h1 {
+            color: #1e40af;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .header-section p {
+            color: #666;
+            font-size: 1.2rem;
+        }
+
+        h2 {
+            color: #1e40af;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #003366;
+            padding-bottom: 0.5rem;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        .section-item {
+            background-color: #f8fafc;
+            color: #333;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+
+        .section-item:hover {
+            transform: translateX(10px);
+        }
+
+        .docs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .workflow {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .workflow-step {
+            flex: 1;
+            min-width: 220px;
+            padding: 1.5rem;
+            text-align: center;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        .workflow-step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .pricing-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .price-card {
+            border: 1px solid #ddd;
+            padding: 1.5rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .price-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border-color: #1e40af;
+        }
+
+        .price {
+            color: #1e40af;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .go-btn {
+            background-color: #2c4ead;
+            color: white;
+            padding: 0.5rem 2rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .go-btn:hover {
+            background-color: #1e40af;
+            transform: translateY(-2px);
+        }
+
+        .faq-section {
+            margin-top: 2rem;
+        }
+
+        .faq-item {
+            border: 1px solid #ccc;
+            padding: 1rem;
+            border-radius: 5px;
+            background-color: #fff;
+            cursor: pointer;
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .faq-item.active {
+            background-color: #f5f5f5;
+            border-color: #003366;
+        }
+
+        .faq-question {
+            color: #1e40af;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .faq-answer {
+            margin-top: 0.5rem;
+            display: none;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-toggle {
+            font-size: 1.5rem;
+            color: #003366;
+        }
+
+        @media (max-width: 768px) {
+            .workflow {
+                flex-direction: column;
+            }
+            .docs-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">B.Act Advisors</div>
+
+    <div class="content">
+        <div class="header-section">
+            <h1>Partnership Firm Registration in India</h1>
+            <p>Register your business partnership with expert guidance</p>
+        </div>
+
+        <div class="section">
+            <h2>Characteristics</h2>
+            <div class="section-item">Two or more persons form a partnership to conduct business in India</div>
+            <div class="section-item">Registration is compulsory only for central India registration</div>
+            <div class="section-item">It's mandatory to register under LLP or Company</div>
+            <div class="section-item">Not suitable for small business</div>
+            <div class="section-item">The partnership firm is compatible with LLP or Company</div>
+        </div>
+
+        <div class="section">
+            <h2>Required Documents</h2>
+            <div class="docs-grid">
+                <div class="section-item">PAN Card of Partners</div>
+                <div class="section-item">Passport Size Photos</div>
+                <div class="section-item">Aadhar Card of Partners</div>
+                <div class="section-item">Bank Statement / Utility Bills</div>
+                <div class="section-item">Business Address Proof</div>
+                <div class="section-item">Partnership Deed</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Registration Workflow</h2>
+            <div class="workflow">
+                <div class="workflow-step" style="background-color: #e0f7fa;">
+                    <h3>Initial Consultation</h3>
+                    <p>Discuss requirements with our experts</p>
+                </div>
+                <div class="workflow-step" style="background-color: #ffccbc;">
+                    <h3>Document Submission</h3>
+                    <p>Submit all required documents</p>
+                </div>
+                <div class="workflow-step" style="background-color: #fff59d;">
+                    <h3>Fee Payment</h3>
+                    <p>Complete the registration fee payment</p>
+                </div>
+                <div class="workflow-step" style="background-color: #c8e6c9;">
+                    <h3>Registration Complete</h3>
+                    <p>Receive your registration certificate</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Cost of Partnership Firm Formation</h2>
+            <div class="pricing-cards">
+                <div class="price-card">
+                    <h2>Un-Registered Firm</h2>
+                    <p>Unregistered firm (Partnership Deed + PAN + MSME certificate)</p>
+                    <div class="price">Rs. 8000</div>
+                    <button class="go-btn">select Package</button>
+                </div>
+
+                <div class="price-card">
+                    <h2>Registered Firm</h2>
+                    <p>Registered firm with Registrar of Firm Office (Firm Regn Certificate + Partnership Deed + PAN + MSME certificate)</p>
+                    <div class="price">Rs. 20000</div>
+                    <button class="go-btn">select Package</button>
+                </div>
+
+                <div class="price-card">
+                    <h2>Startup Firm 1</h2>
+                    <p>Registered firm with Registrar of Firm Office and Startup India Regn (Firm Regn Certificate + Partnership Deed + PAN + Startup India Recognition + MSME certificate)</p>
+                    <div class="price">Rs. 32000</div>
+                    <button class="go-btn">select Package</button>
+                </div>
+
+                <div class="price-card">
+                    <h2>Startup Firm 2</h2>
+                    <p>Registered firm with Registrar of Firm Office and Startup India Regn (Firm Regn Certificate + Partnership Deed + PAN + Startup India Recognition + MSME certificate) with Basic Website</p>
+                    <div class="price">Rs. 39000</div>
+                    <button class="go-btn">select Package</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">What is Partnership?<span class="faq-toggle">+</span></div>
+                <div class="faq-answer">A partnership is a business structure where two or more individuals agree to share profits and losses of a business carried on by all or any of them acting for all. It's governed by the Indian Partnership Act, 1932.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What are the documents required for Partnership Registration?<span class="faq-toggle">+</span></div>
+                <div class="faq-answer">The essential documents include PAN Card of all partners, passport-size photographs, Aadhar Card, bank statements or utility bills as address proof, business address proof, and a properly executed Partnership Deed.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Who can apply for Partnership Registration?<span class="faq-toggle">+</span></div>
+                <div class="faq-answer">Any two or more individuals who are of legal age (18 years or above), mentally competent, and not disqualified by law can form a partnership. Non-Indian citizens can also be partners, subject to applicable regulations.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Is Partnership Registration Compulsory?<span class="faq-toggle">+</span></div>
+                <div class="faq-answer">While registration of a partnership firm is not mandatory under the Partnership Act, it is highly recommended. Registration provides legal recognition and various benefits including the ability to file legal suits against third parties and other partners.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What is Partnership Deed?<span class="faq-toggle">+</span></div>
+                <div class="faq-answer">A Partnership Deed is a legal document that outlines the rights, duties, and obligations of all partners. It includes details about profit sharing, capital contribution, management responsibilities, and other terms and conditions governing the partnership.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">When can Partnership be terminated?<span class="faq-toggle">+</span></div>
+                <div class="faq-answer">A partnership can be terminated in several situations: by mutual agreement of all partners, on completion of the venture, on death or insolvency of a partner, by giving notice in case of partnership at will, or through a court order in case of misconduct or breach of agreement.</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">What are the benefits of getting Partnership Registered?<span class="faq-toggle">+</span></div>
+                <div class="faq-answer">Registration offers several benefits including: legal recognition of the firm, right to file legal suits against third parties, protection of property rights, easier access to bank loans and credit, ability to claim set-off in proceedings, and enhanced credibility with stakeholders.</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => {
+                document.querySelectorAll('.faq-item').forEach(otherItem => {
+                    if (otherItem !== item) {
+                        otherItem.classList.remove('active');
+                        otherItem.querySelector('.faq-toggle').textContent = '+';
+                    }
+                });
+                item.classList.toggle('active');
+                const toggle = item.querySelector('.faq-toggle');
+                toggle.textContent = item.classList.contains('active') ? '−' : '+';
+            });
+        });
+    </script>
+</body>
+</html>

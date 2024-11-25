@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROC Compliance Retainership Service in India</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f8fafc;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: #2c4ead;
+            padding: 1rem;
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Content Styling */
+        .content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 1rem;
+        }
+
+        .header-section {
+            background-color: #f8fafc;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 5px;
+        }
+
+        .header-section h1 {
+            color: #1e40af;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-section p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        /* Characteristics Section */
+        .characteristics {
+            margin: 2rem 0;
+        }
+
+        .char-item {
+            background-color: #f8fafc;
+            color: rgb(10, 5, 5);
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+
+        .char-item:hover {
+            transform: translateX(10px);
+        }
+
+        /* Documents Section */
+        .documents {
+            margin: 2rem 0;
+        }
+
+        .doc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .doc-item {
+            border: 1px solid #ccc;
+            padding: 1.5rem;
+            border-radius: 5px;
+            background-color: #f8fafc;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+
+        .doc-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        /* Cost Section */
+        .cost-section {
+            margin: 2rem 0;
+        }
+
+        .cost-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .cost-item {
+            border: 1px solid #ccc;
+            padding: 1.5rem;
+            border-radius: 5px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .cost-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .price {
+            font-size: 1.4rem;
+            color: #1e40af;
+            font-weight: bold;
+            margin: 1rem 0;
+        }
+
+        .cost-item button {
+            padding: 0.7rem 1.5rem;
+            background-color: #1e40af;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .cost-item button:hover {
+            background-color: #003366;
+        }
+
+        /* Service Coverage Section */
+        .service-coverage {
+            margin: 2rem 0;
+        }
+
+        /* Pre-requisite Section */
+        .pre-requisite {
+            margin: 2rem 0;
+        }
+
+        /* Compliances Section */
+        .compliances {
+            margin: 2rem 0;
+        }
+
+        /* FAQ Section Styling */
+        .faq-section {
+            margin-top: 3rem;
+        }
+
+        .faq-section h2 {
+            font-size: 1.8rem;
+            color: #1e40af;
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        /* FAQ Item Styling */
+        .faq-item {
+            margin-bottom: 1.5rem;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 1rem;
+            background-color: #ffffff;
+            color: #1e40af;
+            text-align: left;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            outline: none;
+        }
+
+        .faq-question:hover {
+            background-color: #f8fafc;;
+        }
+
+        /* FAQ Answer Styling */
+        .faq-answer {
+            padding: 1rem;
+            background-color: #f8fafc;
+            border-left: 4px solid #1e40af;
+            margin-top: 1rem;
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* Toggle FAQ Answer visibility */
+        .faq-item.active .faq-question {
+            background-color: #f8fafc;;
+        }
+
+        h2 {
+            color: #1e40af;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #003366;
+        }
+
+        @media (max-width: 768px) {
+            .work-flow {
+                flex-direction: column;
+            }
+
+            .work-step {
+                margin: 0.5rem 0;
+            }
+
+            .doc-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        /* Additional Styles for New Content */
+        .service-coverage .char-item,
+        .pre-requisite .char-item,
+        .compliances .char-item {
+            background-color: #f8fafc;
+            color: rgb(10, 5, 5);
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border-radius: 5px;
+            transition: transform 0.2s;
+        }
+
+        .service-coverage .char-item:hover,
+        .pre-requisite .char-item:hover,
+        .compliances .char-item:hover {
+            transform: translateX(10px);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-links">
+            <h3>B.Act Advisors</h3>
+        </div>
+    </nav>
+
+    <div class="content">
+        <div class="header-section">
+            <h1>ROC Compliance Retainership Service in India</h1>
+            <p>Ideal for Companies that can't afford high Fees of CA/CS/Legal Team</p>
+            <p><strong>Ontime Compliance = Save Penalty + Future Litigation</strong></p>
+            <p>Retainership Fee Starts @ Rs 15,000 + GST annually</p>
+        </div>
+
+        <div class="characteristics">
+            <h2>ROC Compliance in India at a glance</h2>
+            <div class="char-item">
+                Post incorporation of a company, regular compliances vary as per the nature of companies (One Person Company, Private Limited, Limited Company) and day-to-day business activities. There are mandatory regular compliances every company must meet with ROC on time throughout the year.
+            </div>
+            <div class="char-item">
+                Delay in compliance shall attract penalties up to 12 times the normal fee. Nowadays, consecutive 3 years of non-filing may lead to strike off by ROC and Directors' disqualification from all other companies.
+            </div>
+            <div class="char-item">
+                <strong>Types of Compliances:</strong>
+                <ul>
+                    <li><strong>A. Annual Compliances:</strong> Auditor's Appointment, Annual Return Filings, etc.</li>
+                    <li><strong>B. Special Compliances:</strong> Changes in Capital, MOA/AOA Amendment, Registered Address Changes, etc.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="benefits">
+            <h2>Benefits of Regular ROC Compliance</h2>
+            <div class="char-item"><strong>Save Penalty:</strong> Filing forms on time for regular and special compliances saves heavy penalties of up to 12 times the normal fee.</div>
+            <div class="char-item"><strong>Safe from Strike Off:</strong> Regular annual compliance safeguards you from ROC actions to strike off companies that have not filed annual compliance for the last 2 years, and consequently safeguards Directors from disqualification from other companies and legal penalties under the Companies Act 2013.</div>
+            <div class="char-item"><strong>Maintaining Company Status Active:</strong> Regular compliance helps maintain the company's active status on the ROC portal, aiding in business activities like taking finance, tendering, third-party inspections, etc.</div>
+            <div class="char-item"><strong>Comply Legal Provisions:</strong> Maintaining up-to-date minutes, statutory registers, board resolutions, issuing share certificates on time, and stamping share certificates are basic requirements under company acts and rules.</div>
+        </div>
+
+        <div class="documents">
+            <h2>Annual Filing Documents</h2>
+            <div class="doc-grid">
+                <div class="doc-item">Auditor's Report Scan Copy in PDF</div>
+                <div class="doc-item">Balance Sheet Scan Copy in PDF</div>
+                <div class="doc-item">Director's Report Scan Copy in PDF</div>
+                <div class="doc-item">AGM Notice Scan Copy in PDF</div>
+                <div class="doc-item">All Forms Attested by Practicing CA/CMA/CS</div>
+            </div>
+        </div>
+
+        <!-- Cost Section -->
+        <div class="cost-section">
+            <h2>Our Pricing</h2>
+            <div class="cost-grid">
+                <div class="cost-item">
+                    <h3>New Company</h3>
+                    <p>For first year Compliance</p>
+                    <div class="price">₹15,000</div>
+                    <button>Select Package</button>
+                </div>
+                <div class="cost-item">
+                    <h3>Existing Company</h3>
+                    <p>Turnover below Rs 50 lakhs</p>
+                    <div class="price">₹15,000</div>
+                    <button>Select Package</button>
+                </div>
+                <div class="cost-item">
+                    <h3>Existing Company</h3>
+                    <p>Turnover Rs 50 lakhs - less than 1 Crore</p>
+                    <div class="price">₹20,000</div>
+                    <button>Select Package</button>
+                </div>
+                <div class="cost-item">
+                    <h3>Existing Company</h3>
+                    <p>Turnover Rs 1 Crore - less than 5 Crores</p>
+                    <div class="price">₹35,000</div>
+                    <button>Select Package</button>
+                </div>
+                
+            </div>
+            <p><small>Govt. Fee, Cess, Taxes, and Penalties are payable on actual bases and are not included in our above professional fees.</small></p>
+        </div>
+
+        <div class="service-coverage">
+            <h2>Our Retainership Service Package Inclusion</h2>
+            <div class="char-item">Filing - General Compliance: First Auditor's Appointment, Auditor's Appointment at AGM, Auditor's Removal, AGM Notice, Filing of Balance Sheet, Profile & Loss A/C, and Director's Report.</div>
+            <div class="char-item">Filing - Special Compliance: Filing of Charges in case of loan taken, Filing for any Changes in MOA/AOA, Share Capital Changes, Directorship Changes, Registered Office Changes, Name and Object Clause Changes.</div>
+            <div class="char-item">Statutory Registers & Minutes: Maintaining various Statutory Registers and updating Minutes of the Board Meeting and AGM Proceedings.</div>
+            <div class="char-item">Attestations: All ROC forms attested by Practicing CA/CMA/CS.</div>
+            <div class="char-item">Advisory: On-call advisory assistance in Company Act & Rules and on Recent Amendments and MCA Notifications.</div>
+            <div class="char-item">How to File Forms with ROC</div>
+        </div>
+
+        <div class="compliances">
+            <h2>List of Compliances</h2>
+            <div class="char-item">First Auditor's Appointment</div>
+            <div class="char-item">Subsequent Auditor’s Appointment at AGM</div>
+            <div class="char-item">Annual Filing of Balance Sheet and Profit & Loss A/C, etc.</div>
+            <div class="char-item">Attestation of all ROC forms by Practicing CA/CMA/CS</div>
+        </div>
+
+        <div class="service-coverage">
+            <h2>Why you may need ROC Compliance Retainership Service?</h2>
+            <div class="char-item">Complying with legal requirements ensures your company remains in good standing, avoiding penalties and legal issues.</div>
+            <div class="char-item">Regular compliance filings save you from hefty penalties and potential legal actions by ROC.</div>
+            <div class="char-item">Maintaining up-to-date statutory records facilitates smooth business operations and enhances credibility.</div>
+            <div class="char-item">Expert advisory services keep you informed about the latest amendments and compliance requirements.</div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <button class="faq-question">What is ROC Compliance?</button>
+                <div class="faq-answer">
+                    <p>ROC Compliance refers to adhering to the legal requirements laid down under the Companies Act for any Pvt. Ltd., Ltd., OPC company, etc., from time to time.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">What are the various ROC Compliances post incorporation of a One Person Company?</button>
+                <div class="faq-answer">
+                    <p>Post incorporation ROC compliances for OPC are as below:
+                        <ol>
+                            <li>Paint or affix the name of the company and address of its registered office outside office.</li>
+                            <li>Open Bank Account.</li>
+                            <li>Appoint Auditor within 30 days of incorporation.</li>
+                            <li>Hold an annual general meeting every financial year.</li>
+                            <li>Prepare and file annual financials with ROC.</li>
+                        </ol>
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">What are the various ROC Compliances post incorporation of a Private company?</button>
+                <div class="faq-answer">
+                    <p>Post incorporation ROC compliances for Pvt. Ltd. company are as below:
+                        <ol>
+                            <li>Paint or affix the name of the company and address of its registered office outside office within 15 days of incorporation.</li>
+                            <li>Hold First Board meeting within 30 days of incorporation and thereafter one Board Meeting every 3 months.</li>
+                            <li>Appoint Auditor within 30 days of incorporation.</li>
+                            <li>Disclosure of Interest by Directors.</li>
+                            <li>Open Bank Account.</li>
+                            <li>Deposit Share subscription amount in Bank and issue share certificates to Shareholders within 2 months of incorporation.</li>
+                            <li>Take registrations like GST, MSME, Trademark or any other as required, if any.</li>
+                            <li>Hold an annual general meeting once in a financial year.</li>
+                            <li>Prepare and file annual financials including Balance Sheet, Profit and Loss account with ROC.</li>
+                        </ol>
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">What are the various ROC Compliances post incorporation of a Limited company?</button>
+                <div class="faq-answer">
+                    <p>Post incorporation ROC compliances for Ltd. company are as below:
+                        <ol>
+                            <li>Paint or affix the name of the company and address of its registered office outside office within 15 days of incorporation.</li>
+                            <li>Hold First Board meeting within 30 days of incorporation and thereafter one Board Meeting every 3 months.</li>
+                            <li>Appoint Auditor within 30 days of incorporation for a period of 5 years and thereafter ratify in every AGM.</li>
+                            <li>Disclosure of Interest by Directors in first board meeting and thereafter whenever there is any change in their directorship.</li>
+                            <li>Open Bank Account.</li>
+                            <li>Deposit Share subscription amount in Bank and issue share certificates to Shareholders within 2 months of incorporation.</li>
+                            <li>Take registrations like GST, MSME, Trademark or any other as required, if any.</li>
+                            <li>Maintenance of Minutes and Statutory Registers.</li>
+                            <li>Hold an annual general meeting once in a financial year.</li>
+                            <li>Prepare and file annual financials including Balance Sheet, Profit and Loss account with ROC (Forms MGT 7 and AOC 4 and MGT 8 if required).</li>
+                        </ol>
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">What are the various ROC Compliances post incorporation of a Limited Liability Partnership (LLP)?</button>
+                <div class="faq-answer">
+                    <p>Post incorporation ROC compliances for LLP are as below:
+                        <ol>
+                            <li>File LLP Agreement.</li>
+                            <li>Get rubber stamp and letterhead printed.</li>
+                            <li>Make PAN and TAN application.</li>
+                            <li>Bank Account Opening.</li>
+                            <li>Auditor Appointment, if required.</li>
+                            <li>Filing LLP Annual Return.</li>
+                        </ol>
+                    </p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">How to Comply regularly with ROC?</button>
+                <div class="faq-answer">
+                    <p>Make regular filing of annual forms and event-based other forms with ROC.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Is Practicing CA/CMA/CS sign compulsory in ROC form?</button>
+                <div class="faq-answer">
+                    <p>Signing of forms depends on the type of form and it varies depending upon the status of the company i.e., Pvt Ltd., Ltd., OPC, and LLP.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">Why CA/CMA/CS certification required in ROC Form?</button>
+                <div class="faq-answer">
+                    <p>To certify the form and ensure lawful compliance with all requirements in eForm.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">What are the Govt. fees for Filing?</button>
+                <div class="faq-answer">
+                    <p>Government fees for eForm filing depend upon the paid-up capital of the company.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">What is minute, Board Resolution, and Statutory register?</button>
+                <div class="faq-answer">
+                    <p><strong>MINUTES:</strong> Minutes are prepared regularly in the minute book to keep a record of company activities and decisions taken in various board and annual meetings of directors and shareholders.</p>
+                    <p><strong>BOARD RESOLUTION:</strong> A board resolution is authorization and acknowledgment for any act to be done in the company or for performing any transaction.</p>
+                    <p><strong>STATUTORY REGISTERS:</strong> These registers need to be maintained and updated regularly and should be kept at the Registered Office of the Company.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelectorAll('.faq-item').forEach(item => {
+            const question = item.querySelector('.faq-question');
+            question.addEventListener('click', () => {
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>
